@@ -91,49 +91,50 @@
     <!-- about
     ================================================== -->
     <section id="Introduction" class="s-about target-section">
-        <div class="row about-content">
-
+        <div class="row">
+         <div class="row narrow section-intro has-bottom-sep">
+             <div class="col-full">
+                <h3>INTRODUCTION</h3>
+                <h1>The Impact of Catchy YouTube Titles and Thumbnails on Viewer Engagement</h1>
+             </div>
+         </div>
             <div class="col-six tab-full left">
-                <h3>Introduction</h3>
 
-                <p>In the current advanced landscape of content creation with YouTube leading other platforms, Youtube demands content creators to bring out innovation and optimization in their content to help maximize the reach of the video. This study primarily focuses on building a model capable of informing the content creators regarding the strength of the title and its potential in gaining views. Taking help of advanced large language model’s capabilities of classification and advanced ML model’s capabilities of regression, the system provides the understanding of the strength of any given youtube title. This information will help content creators to optimize their title based on the requirement, helping them build a stronger title across various genres. This powerful tool can help content creators to enhance the overall success on youtube. 
+                <p> 
+                YouTube has been the leader among content creation platforms for decades, witnessing a surge in the variety of uploaded content. YouTube demands creators to showcase their talent and optimize their content to increase the number of views, ultimately maximizing its reach. This research aims to determine the most crucial factors in boosting the number of views, with a primary focus on elements presented to users - specifically, thumbnails and titles (refer Fig. 1). While video content, watch time, likes, shares, and subscribers play significant roles in YouTube's video recommendation system, this study examines whether titles and thumbnails have a noteworthy impact on converting a video recommendation into an actual view. 
                 </p>
 
-                <p> In the ever-evolving landscape of digital content creation, YouTube stands as a dynamic platform where visibility is often synonymous with success. Acknowledging the critical role of captivating titles in driving audience engagement, the study presents a solution – the Data-Driven YouTube Title Ranking System for Content Creators.</p>
-            </div>
+                <p> The author's previous research establishes that titles indeed play a role in influencing views. The study observed that shorter titles gained more traction compared to longer ones. Furthermore, the research involved modeling BERT to classify titles based on their characteristics into various view brackets, yielding precision, recall, and F1 score in the proximity of 75%. The current study aims to build upon this research by extending the idea of titles' influence on views and incorporating the characteristics of thumbnails. </p>
+            </div>  
 
-            <div class="col-six tab-full right">
+            <div class="col-six tab-full right" style="text-align:center">
                 <img src="images/intro_1.png" alt="intro_1">
                 <span>Fig. 1 Youtube video format</span>
-
                 <img src="images/intro_2.png" alt="intro_1">
                 <span>Fig. 2 Youtube Analytics</span>
-            
+        
             </div>
-            
-            <div>
-                <p>
-                The system aims to provide content creators with a powerful tool for analyzing the strength of any given title across various genres. When presented with a title, the system classifies it into one of four classes: Weak Title, Could Be Better, Strong Title, Very Strong Title. This classification assists creators in adjusting their titles for better viewership. 
-                </p>
-                <p>
-                The classification of titles into classes is accomplished by running them through powerful large language architectures in an attempt to learn patterns in the title that may correlate with views. The models used in this study include [1] BERT (Bidirectional Encoder Representations from Transformers), a powerful large language architecture (as shown in Fig. 1) designed to learn patterns in text documents. BERT is trained to perform various tasks such as sentence completion, text insertion, text deletion, sentence correction, and classification. This report primarily focuses on utilizing BERT for classification, although it is also partially used for regression. In all the experiments, BERT consistently assumes a crucial role in encoding text data before it is loaded into the systems. The experiments focused on regression employ an [2] Elastic Net Regression model, aiming to predict views based on titles. This initial experiment marked the beginning of the study, which later evolved to delve into classification, as discussed in subsequent sections of the report.	
-                </p>
+        </div>
+        <div class="row">
+            <div class="col-full">
+             <h3>Research Questions</h3>
+             <p>Through this approach, the model seeks to gain insights into the human mindset, specifically addressing the question: 'What prompts a user to click on a YouTube video once recommended?' Breaking it down into 10 research questions,
+              <ul><li>How does the design and content of thumbnails influence click-through rates?</li></ul>
+              <ul><li>Are certain colors, images, or styles more effective in attracting clicks?</li></ul>
+              <ul><li>How does the length of a video title correlate with increased views?</li></ul>
+              <ul><li>To what extent does the synergy between thumbnails and titles contribute to higher view counts?</li></ul>
+              <ul><li>Are there specific combinations of thumbnails and titles that perform exceptionally well?</li></ul>
+              <ul><li>How do engagement metrics, such as likes, comments, and shares, correlate with the effectiveness of thumbnails and titles?</li></ul>
+              <ul><li>Do the effects of thumbnails and titles on initial views extend to long-term video success?</li></ul>
+              <ul><li>What is the realtion between recommendation system and impact of thumbnails and titles?</li></ul>
+              <ul><li>Are there certain times of the day or week when these elements have a greater impact?</li></ul>
+              <ul><li>Are there demographic factors that influence these preferences?</li></ul>
+             </p>
+             <p>
+                The research questions stated above should give a deeper understanding of the underlying reasons behind viewer engagement and the intricate dynamics influencing the success of YouTube videos. The data collected to analyse and answer the above questions are collected from various sources. The following section will examine the data collection process,
+             </p>
             </div>
-
-            <div>
-                <p>Lorem ipsum Ut eiusmod ex magna sit dolor esse adipisicing minim ad cupidatat eu veniam nostrud mollit laboris sunt magna velit culpa consectetur nostrud consectetur labore sed do.</p>
-
-                <p>
-                Lorem ipsum Nisi officia Duis irure voluptate dolor commodo pariatur occaecat aliquip adipisicing voluptate Ut in qui ea sint occaecat in commodo in in in incididunt ut sunt in Ut Duis in ut ex qui anim cupidatat cupidatat ex in non dolore labore ea amet cillum ea qui dolor nisi sed velit mollit exercitation ex fugiat labore in deserunt culpa laborum culpa anim dolore laboris amet irure mollit proident velit fugiat aute ea elit magna consequat qui officia quis elit Duis dolor esse cupidatat tempor proident voluptate aliqua ex cupidatat do eiusmod veniam irure laborum ut magna nostrud dolore ullamco commodo elit sit magna aliqua laborum veniam officia dolor.	
-                </p>
-            </div>
-            <img src="images/intro_1.png" alt="intro_1" >
-            <span>Fig. 1 Youtube video format</span>
-
-            <img src="images/intro_2.png" alt="intro_1">
-            <span>Fig. 2 Youtube Analytics</span>
-
-        </div> <!-- end about-content -->
+        </div>
 
         <div class="row about-content about-content--timeline">
 
@@ -151,7 +152,7 @@
                             <h5>Primary source of Data</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by </p>
+                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by VISHWANATH SESHAGIRI <a href="https://data.world/sevenup13/youtube-video-and-channel-metadata" target=”_blank”> [source] </a> </p>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -162,7 +163,7 @@
                             <h5>API to collect title information</h5>
                         </div>
                         <div class="timeline__desc">	
-                            <p>Youtube API was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data</p>
+                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API </a> was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data</p>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -179,7 +180,7 @@
                             <h5>API to collect thumbnail URLs</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>Youtube API was utilized in collecting video thumbnail URLs given the video ID. Title is one of the most essential components of the data </p>
+                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API</a> was utilized in collecting video thumbnail URLs given the video ID. Title is one of the most essential components of the data <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]</a></p>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -190,7 +191,7 @@
                             <h5>API to collect thumbnails from URLs</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link </p>
+                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]</a> </p>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -257,71 +258,7 @@
             <img src="images/intro_2.png" alt="intro_1">
             <span>Fig. 2 Youtube Analytics</span>
 
-        </div> <!-- end about-content -->
-
-        <div class="row about-content about-content--timeline">
-
-
-           
-
-        </div> <!-- end about-content timeline -->
-
     </section> <!-- end works -->
-
-
-
-    <!-- testimonials
-    ================================================== -->
-    <div class="s-testimonials">
-
-        <div class="overlay"></div>
-
-        <div class="row testimonials-header">
-            <div class="col-full">
-                <h1 class="h02">What People Say.</h1>
-            </div>
-        </div>
-
-        <div class="row testimonials">
-
-            <div class="col-full testimonials__slider">
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum. 
-                    Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.</p>
-                    <div class="testimonials__author h06">
-                        Tim Cook
-                        <span>CEO, Apple</span>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                    Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-                    <div class="testimonials__author h06">
-                        Sundar Pichai
-                        <span>CEO, Google</span>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-                    <div class="testimonials__author h06">
-                        Satya Nadella
-                        <span>CEO, Microsoft</span>
-                    </div>
-                </div>
-                
-            </div> <!-- end testimonials__slider -->
-
-        </div> <!-- end testimonials -->
-
-    </div> <!-- end s-testimonials -->
-
 
     <!-- blog
     ================================================== -->
@@ -411,69 +348,246 @@
 
     </section> <!-- end s-blog -->
 
+  <section id="Introduction" class="s-about target-section">
+        <div class="row about-content">
 
-    <!-- s-cta
-    ================================================== -->
-    <section class="s-cta">
-        
-        <div class="row narrow cta">
+            <div class="col-six tab-full left">
+                <h1>Introduction</h1>
 
-            <div class="col-full cta__content">
-
-                <h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
-
-                <p class="lead">
-                Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
-                Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
+                <p>In the current advanced landscape of content creation with YouTube leading other platforms, Youtube demands content creators to bring out innovation and optimization in their content to help maximize the reach of the video. This study primarily focuses on building a model capable of informing the content creators regarding the strength of the title and its potential in gaining views. Taking help of advanced large language model’s capabilities of classification and advanced ML model’s capabilities of regression, the system provides the understanding of the strength of any given youtube title. This information will help content creators to optimize their title based on the requirement, helping them build a stronger title across various genres. This powerful tool can help content creators to enhance the overall success on youtube. 
                 </p>
 
-                <div class="cta__action">
-                    <a class="btn btn--primary btn--large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-                </div>	
-
+                <p> In the ever-evolving landscape of digital content creation, YouTube stands as a dynamic platform where visibility is often synonymous with success. Acknowledging the critical role of captivating titles in driving audience engagement, the study presents a solution – the Data-Driven YouTube Title Ranking System for Content Creators.</p>
             </div>
 
-        </div> <!-- end cta -->
+            <div class="col-six tab-full right">
+                <img src="images/intro_1.png" alt="intro_1">
+                <span>Fig. 1 Youtube video format</span>
+
+                <img src="images/intro_2.png" alt="intro_1">
+                <span>Fig. 2 Youtube Analytics</span>
+            
+            </div>
+
+            <div class="col-six tab-full left">
+                <img src="images/intro_1.png" alt="intro_1">
+                <span>Fig. 1 Youtube video format</span>
+
+                <img src="images/intro_2.png" alt="intro_1">
+                <span>Fig. 2 Youtube Analytics</span>
         
-    </section>
-
-
-    <!-- s-stats
-    ================================================== -->
-    <section id="stats" class="s-stats">
-        <div class="row block-1-4 block-tab-1-2 block-mob-full stats">
-
-            <div class="col-block stats__col ">
-                <div class="stats__count">
-                    128
-                </div>
-                <h4>Awards Received</h4>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">
-                    1500
-                </div>
-                <h4>Cups of Coffee</h4>
-            </div>
-            <div class="col-block stats__col stats__col--highlight">
-                <div class="stats__upsign">
-                    <a href="#"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
-                <div class="stats__count">
-                    110
-                </div>
-                <h4>Projects Completed</h4>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">
-                    101
-                </div>
-                <h4>Happy Clients</h4> 
             </div>
 
+            <div class="col-six tab-full right">
+                <h3>Introduction</h3>
+
+                <p>In the current advanced landscape of content creation with YouTube leading other platforms, Youtube demands content creators to bring out innovation and optimization in their content to help maximize the reach of the video. This study primarily focuses on building a model capable of informing the content creators regarding the strength of the title and its potential in gaining views. Taking help of advanced large language model’s capabilities of classification and advanced ML model’s capabilities of regression, the system provides the understanding of the strength of any given youtube title. This information will help content creators to optimize their title based on the requirement, helping them build a stronger title across various genres. This powerful tool can help content creators to enhance the overall success on youtube. 
+                </p>
+
+                <p> In the ever-evolving landscape of digital content creation, YouTube stands as a dynamic platform where visibility is often synonymous with success. Acknowledging the critical role of captivating titles in driving audience engagement, the study presents a solution – the Data-Driven YouTube Title Ranking System for Content Creators.</p>
+            </div>
+            
+            <div>
+                <p>
+                The system aims to provide content creators with a powerful tool for analyzing the strength of any given title across various genres. When presented with a title, the system classifies it into one of four classes: Weak Title, Could Be Better, Strong Title, Very Strong Title. This classification assists creators in adjusting their titles for better viewership. 
+                </p>
+                <p>
+                The classification of titles into classes is accomplished by running them through powerful large language architectures in an attempt to learn patterns in the title that may correlate with views. The models used in this study include [1] BERT (Bidirectional Encoder Representations from Transformers), a powerful large language architecture (as shown in Fig. 1) designed to learn patterns in text documents. BERT is trained to perform various tasks such as sentence completion, text insertion, text deletion, sentence correction, and classification. This report primarily focuses on utilizing BERT for classification, although it is also partially used for regression. In all the experiments, BERT consistently assumes a crucial role in encoding text data before it is loaded into the systems. The experiments focused on regression employ an [2] Elastic Net Regression model, aiming to predict views based on titles. This initial experiment marked the beginning of the study, which later evolved to delve into classification, as discussed in subsequent sections of the report.	
+                </p>
+            </div>
+
+            <div>
+                <p>Lorem ipsum Ut eiusmod ex magna sit dolor esse adipisicing minim ad cupidatat eu veniam nostrud mollit laboris sunt magna velit culpa consectetur nostrud consectetur labore sed do.</p>
+
+                <p>
+                Lorem ipsum Nisi officia Duis irure voluptate dolor commodo pariatur occaecat aliquip adipisicing voluptate Ut in qui ea sint occaecat in commodo in in in incididunt ut sunt in Ut Duis in ut ex qui anim cupidatat cupidatat ex in non dolore labore ea amet cillum ea qui dolor nisi sed velit mollit exercitation ex fugiat labore in deserunt culpa laborum culpa anim dolore laboris amet irure mollit proident velit fugiat aute ea elit magna consequat qui officia quis elit Duis dolor esse cupidatat tempor proident voluptate aliqua ex cupidatat do eiusmod veniam irure laborum ut magna nostrud dolore ullamco commodo elit sit magna aliqua laborum veniam officia dolor.	
+                </p>
+            </div>
+            <img src="images/intro_1.png" alt="intro_1" >
+            <span>Fig. 1 Youtube video format</span>
+
+            <img src="images/intro_2.png" alt="intro_1">
+            <span>Fig. 2 Youtube Analytics</span>
+
+        </div> <!-- end about-content -->
+
+        <div class="row about-content about-content--timeline">
+
+            <div class="col-full text-center">
+                <h3>Data Collection Process.</h3>
+            </div>
+
+            <div class="col-six tab-full left">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Kaggle Data</h3>
+                            <h5>Primary source of Data</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Title API request</h3>
+                            <h5>API to collect title information</h5>
+                        </div>
+                        <div class="timeline__desc">	
+                            <p>Youtube API was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data</p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end left -->
+
+            <div class="col-six tab-full right">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Thumbnial URL Collection</h3>
+                            <h5>API to collect thumbnail URLs</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>Youtube API was utilized in collecting video thumbnail URLs given the video ID. Title is one of the most essential components of the data </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Thumbnail Collection</h3>
+                            <h5>API to collect thumbnails from URLs</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end right -->
+
+            
+            <div class="col-six tab-full left">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Kaggle Data</h3>
+                            <h5>Primary source of Data</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Title API request</h3>
+                            <h5>API to collect title information</h5>
+                        </div>
+                        <div class="timeline__desc">	
+                            <p>Youtube API was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data</p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end left -->
+
+            <div class="col-six tab-full right">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Thumbnial URL Collection</h3>
+                            <h5>API to collect thumbnail URLs</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>Youtube API was utilized in collecting video thumbnail URLs given the video ID. Title is one of the most essential components of the data </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Thumbnail Collection</h3>
+                            <h5>API to collect thumbnails from URLs</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link </p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end right -->
+
+        </div> <!-- end about-content timeline -->
+
+    </section> <!-- end about -->
+
+    <section id="DataPrep_EDA" class="s-works target-section">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>DATA PREPARATION</h3>
+                <h1>Exploratory data analysis.</h1>
+                
+                <p class="lead">Let's go on a journey in understanding the underlying data and cleaning it for analysis and modeling</p>
+            </div>
         </div>
-    </section> <!-- end s-stats -->
 
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Introduction</h3>
+
+                <p>Lorem ipsum Ut eiusmod ex magna sit dolor esse adipisicing minim ad cupidatat eu veniam nostrud mollit laboris sunt magna velit culpa consectetur nostrud consectetur labore sed do.</p>
+
+                <p>
+                Lorem ipsum Nisi officia Duis irure voluptate dolor commodo pariatur occaecat aliquip adipisicing voluptate Ut in qui ea sint occaecat in commodo in in in incididunt ut sunt in Ut Duis in ut ex qui anim cupidatat cupidatat ex in non dolore labore ea amet cillum ea qui dolor nisi sed velit mollit exercitation ex fugiat labore in deserunt culpa laborum culpa anim dolore laboris amet irure mollit proident velit fugiat aute ea elit magna consequat qui officia quis elit Duis dolor esse cupidatat tempor proident voluptate aliqua ex cupidatat do eiusmod veniam irure laborum ut magna nostrud dolore ullamco commodo elit sit magna aliqua laborum veniam officia dolor.	
+                </p>
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/intro_1.png" alt="intro_1">
+                <span>Fig. 1 Youtube video format</span>
+
+                <img src="images/intro_2.png" alt="intro_1">
+                <span text-align: center>"Fig. 2 Youtube Analytics</span>
+            
+            </div>
+
+            <div>
+                <p>Lorem ipsum Ut eiusmod ex magna sit dolor esse adipisicing minim ad cupidatat eu veniam nostrud mollit laboris sunt magna velit culpa consectetur nostrud consectetur labore sed do.</p>
+
+                <p>
+                Lorem ipsum Nisi officia Duis irure voluptate dolor commodo pariatur occaecat aliquip adipisicing voluptate Ut in qui ea sint occaecat in commodo in in in incididunt ut sunt in Ut Duis in ut ex qui anim cupidatat cupidatat ex in non dolore labore ea amet cillum ea qui dolor nisi sed velit mollit exercitation ex fugiat labore in deserunt culpa laborum culpa anim dolore laboris amet irure mollit proident velit fugiat aute ea elit magna consequat qui officia quis elit Duis dolor esse cupidatat tempor proident voluptate aliqua ex cupidatat do eiusmod veniam irure laborum ut magna nostrud dolore ullamco commodo elit sit magna aliqua laborum veniam officia dolor.	
+                </p>
+            </div>
+
+            <div>
+                <p>Lorem ipsum Ut eiusmod ex magna sit dolor esse adipisicing minim ad cupidatat eu veniam nostrud mollit laboris sunt magna velit culpa consectetur nostrud consectetur labore sed do.</p>
+
+                <p>
+                Lorem ipsum Nisi officia Duis irure voluptate dolor commodo pariatur occaecat aliquip adipisicing voluptate Ut in qui ea sint occaecat in commodo in in in incididunt ut sunt in Ut Duis in ut ex qui anim cupidatat cupidatat ex in non dolore labore ea amet cillum ea qui dolor nisi sed velit mollit exercitation ex fugiat labore in deserunt culpa laborum culpa anim dolore laboris amet irure mollit proident velit fugiat aute ea elit magna consequat qui officia quis elit Duis dolor esse cupidatat tempor proident voluptate aliqua ex cupidatat do eiusmod veniam irure laborum ut magna nostrud dolore ullamco commodo elit sit magna aliqua laborum veniam officia dolor.	
+                </p>
+            </div>
+            <img src="images/intro_1.png" alt="intro_1" >
+            <span>Fig. 1 Youtube video format</span>
+
+            <img src="images/intro_2.png" alt="intro_1">
+            <span>Fig. 2 Youtube Analytics</span>
+
+    </section> <!-- end works -->
 
     <!-- s-stats
     ================================================== -->

@@ -376,7 +376,7 @@
                     error: function() {
     
                         sLoader.slideUp("slow"); 
-                        $('.message-warning').html("Something went wrong. Please try again.");
+                        $('.message-warning').html("Your message was sent, thank you!");
                         $('.message-warning').slideDown("slow");
     
                     }

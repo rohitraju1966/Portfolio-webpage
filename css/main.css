@@ -2354,7 +2354,7 @@ html.no-csstransitions .home-content__main {
 
 .s-works {
     padding-top: 15rem;
-    padding-bottom: 15.6rem;
+    padding-bottom: 10rem;
     background-color: #f1f1f1;
     position: relative;
 }
@@ -2381,11 +2381,14 @@ html.no-csstransitions .home-content__main {
 }
 
 .masonry__brick {
+    margin-right: 8rem;
+    margin-bottom: 5rem;
+    margin-left: 8rem;
     float: left;
     padding: 0;
 }
 
-.item-folio {
+.item-folios {
     position: relative;
     overflow: hidden;
 }
@@ -2525,12 +2528,12 @@ html.no-csstransitions .home-content__main {
 
 /* on hover */
 
-.item-folio:hover .item-folio__thumb a::before {
+.item-folios:hover .item-folio__thumb a::before {
     opacity: 1;
     visibility: visible;
 }
 
-.item-folio:hover .item-folio__thumb a::after {
+.item-folios:hover .item-folio__thumb a::after {
     opacity: 1;
     visibility: visible;
     -webkit-transform: scale(1);
@@ -2538,13 +2541,13 @@ html.no-csstransitions .home-content__main {
     transform: scale(1);
 }
 
-.item-folio:hover .item-folio__thumb img {
+.item-folios:hover .item-folio__thumb img {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
-.item-folio:hover .item-folio__project-link {
+.item-folios:hover .item-folio__project-link {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
@@ -2874,7 +2877,7 @@ html.no-csstransitions .home-content__main {
 
 .s-cta {
     margin-top: -9rem;
-    padding-top: 0;
+    padding-top: 10rem;
     padding-bottom: 9rem;
     background-color: #FFFFFF;
     position: relative;
@@ -3164,7 +3167,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .message-warning {
-    color: #ff6163;
+    color: #008C2C;
 }
 
 .message-success {
