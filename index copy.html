@@ -159,7 +159,10 @@
                             <h5>Primary source of Data</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by VISHWANATH SESHAGIRI <a href="https://data.world/sevenup13/youtube-video-and-channel-metadata" target=”_blank”> [source] </a> </p>
+                            <p>The major chuck of data that has been utilized in this project has been taken from Kaggle, uploaded by VISHWANATH SESHAGIRI <a href="https://data.world/sevenup13/youtube-video-and-channel-metadata" target=”_blank”> [source]. </a> (Click on the image below to view it in a seperate tab) </p>
+                            <a href="images/CSV_1.png" target="_blank">
+                                <img src="images/CSV_1.png" alt="intro_1" style="width:200px; height:200px;">
+                            </a>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -170,7 +173,10 @@
                             <h5>API to collect title information</h5>
                         </div>
                         <div class="timeline__desc">	
-                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API </a> was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data</p>
+                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API </a> was utilized in collecting youtube title information given the video ID. Title is one of the most essential components of the data. (Click on the image below to view it in a seperate tab)</p>
+                            <a href="images/CSV_2.png" target="_blank">
+                                <img src="images/CSV_2.png" alt="intro_1" style="width:200px; height:200px;">
+                            </a>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -187,7 +193,10 @@
                             <h5>API to collect thumbnail URLs</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API</a> was utilized in collecting video thumbnail URLs given the video ID. Thumbnail is another really essential components of the data <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]</a></p>
+                            <p><a href="https://console.cloud.google.com/apis/library" target=”_blank”>Youtube API</a> was utilized in collecting video thumbnail URLs given the video ID. Thumbnail is another really essential components of the data <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]. </a>(Click on the image below to view it in a seperate tab)</p>
+                            <a href="images/CSV_3.png" target="_blank">
+                                <img src="images/CSV_3.png" alt="intro_1" style="width:200px; height:200px;">
+                            </a>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -198,7 +207,10 @@
                             <h5>API to collect thumbnails from URLs</h5>
                         </div>
                         <div class="timeline__desc">
-                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]</a> </p>
+                            <p>API is used to download the images from the thumbnail URLS, the downloaded thumbnails are stored into a google drive link <a href="https://colab.research.google.com/drive/1yFqry2OxFdPrVUTNmdsrtZUXwSgHN6o6?usp=sharing" target=”_blank”>[Source code]. </a> (Click on the image below to view it in a seperate tab) </p>
+                            <a href="images/CSV_4.png" target="_blank">
+                                <img src="images/CSV_4.png" alt="intro_1" style="width:200px; height:200px;">
+                            </a>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -227,8 +239,8 @@
 
             <div class="col-six tab-full left">
 
-                <p>The word cloud (refer to Fig. 3) provides an overview of the columns present in the data. It should be noted that the word cloud was generated to emphasize words with higher repetition. It is evident that several 'Unnamed' columns may have been generated while storing data using an API key; these should be removed. Additionally, the 'index' column serves no purpose and can be excluded. Other columns should be retained for further analysis.</p>
-
+                <p>To initiate a comprehensive understanding of the data, a word cloud (refer to Fig. 3) has been generated to provide an overview of the columns present in the dataset. It should be noted that the word cloud was created to emphasize words with higher repetition. It is evident that several 'Unnamed' columns may have been generated while storing data using an API key; these should be removed. Additionally, the 'index' column serves no purpose and can be excluded. Other columns should be retained for further analysis. Moving on to analyzing the amount of missing values in the most important columns of the data.</p>
+               
             </div>
 
             <div class="col-six tab-full right" style="text-align:center">
@@ -255,7 +267,10 @@
                 </p>
                 <p>
                     The data interestingly spans across the majority of YouTube categories (Fig. 11 and Fig. 12), exhibiting an almost equal distribution among key genres such as entertainment, people and blogs, gaming, and sports. It should also be noted that most of the genres have more than 2000 vidoes in the data containing 100k data points. This diversity is beneficial, as modeling the data can provide insights into the impact of titles and thumbnails not only within a single category but across a wide spectrum of categories.
-                </p>      
+                </p>  
+                <p>
+                    At this point, the data is more or less clean, exhibiting no missing values and featuring appropriate data types with consistent values. While the dataset contains some outliers, they are retained at this stage as they might prove useful for the subsequent analysis. A partial snapshot of the cleaned dataset is displayed below (refer Fig. 13x). The image illustrates an additional column that has been introduced (categoryID), along with cleaned titles and thumbnail URL columns.
+                </p>        
     
             </div>
             <div class="col-six tab-full right">
@@ -275,7 +290,12 @@
                 <p style="text-align:center">Fig. 12 Videos per video category</p style="text-align:center">
                 
             </div>
-
+        </div>
+        <div class="row about-content">
+            <a href="images/CSV_5.png" target="_blank">
+                <img src="images/CSV_5.png" alt="intro_1" style="width:1200px; height:600px;">
+                <p style="text-align:center">Fig. 13 Cleaned dataset</p style="text-align:center">
+            </a>
         </div>
         <div>
 
