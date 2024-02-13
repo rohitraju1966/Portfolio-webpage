@@ -2377,14 +2377,14 @@ html.no-csstransitions .home-content__main {
 }
 
 .masonry .grid-sizer, .masonry__brick {
-    width: 400px;
+    width: 350px;
 }
 
 .masonry__brick {
     margin-right: 5rem;
     margin-bottom: 5rem;
-    margin-left: 5rem;
-    float: left;
+    margin-left: 0rem;
+    float: inline-start;
     padding: 0;
 }
 
