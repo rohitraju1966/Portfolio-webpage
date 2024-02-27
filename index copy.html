@@ -51,10 +51,10 @@
                 <li class="current"><a class="smoothscroll"  href="#Introduction" title="Introduction">Introduction</a></li>
                 <li><a class="smoothscroll"  href="#DataPrep_EDA" title="DataPrep_ED">DataPrep_EDA</a></li>
                 <li><a class="smoothscroll"  href="#Clustering" title="Clustering">Clustering</a></li>
-                <li><a class="smoothscroll"  href="#SVMs" title="SVMs">SVMs</a></li>
+                <li><a class="smoothscroll"  href="#ARM" title="SVMs">ARM</a></li>
                 <li><a class="smoothscroll"  href="#Regression" title="Regression">Regression</a></li>
                 <li><a class="smoothscroll"  href="#DecTrees" title="DecTrees">DecTrees</a></li>
-                <li><a class="smoothscroll"  href="#NN" title="NN">NN</a></li>
+                <li><a class="smoothscroll"  href="#contact" title="Contact">Contact</a></li>
                 
             </ul>
         </nav>
@@ -104,7 +104,7 @@
                 YouTube has been the leader among content creation platforms for decades, witnessing a surge in the variety of uploaded content. YouTube demands creators to showcase their talent and optimize their content to increase the number of views, ultimately maximizing its reach. This research aims to determine the most crucial factors in boosting the number of views, with a primary focus on elements presented to users - specifically, thumbnails and titles (refer Fig. 1). While video content, watch time, likes, shares, and subscribers play significant roles in YouTube's video recommendation system, this study examines whether titles and thumbnails have a noteworthy impact on converting a video recommendation into an actual view. 
                 </p>
 
-                <p> The author's previous research establishes that titles indeed play a role in influencing views. The study observed that shorter titles gained more traction compared to longer ones. Furthermore, the research involved modeling BERT to classify titles based on their characteristics into various view brackets, yielding precision, recall, and F1 score in the proximity of 75%. The current study aims to build upon this research by extending the idea of titles' influence on views and incorporating the characteristics of thumbnails. </p>
+                <p> The author's previous research establishes that titles indeed play a role in influencing views. The study observed that shorter titles gained more traction compared to longer ones. The current study aims to build upon this research by extending the idea of titles' influence on views and incorporating the characteristics of thumbnails. In the journey also explore the other performance metrics such as likes, subscribers and number of comments on a video and its relation to title and views. </p>
             </div>
 
             <div class="col-six tab-full right" style="text-align:center">
@@ -118,7 +118,10 @@
         <div class="row">
             <div>
                 <p>
-                    YouTube Analytics Application is a platform (Fig. 2) created by Google for YouTube content creators to analyze their data. It displays basic analytics such as the number of views, shares, likes, dislikes, subscribers, and click-through rate. Additionally, it provides content creators with the freedom to visualize their data to gain more insights into the relationship between variables. The platform offers in-depth analysis of video performance, aiding content creators in improving video quality and content. Despite these features, there is currently no tool or analytics within the platform specifically designed to help creators craft effective titles and thumbnails – a critical aspect of content creation. The focus of this research is to build a tool that assists content creators in evaluating the quality of their titles and thumbnails. To proceed with building the application, it is crucial to address some of the truly intriguing research questions,
+                    YouTube Analytics Application is a platform (Fig. 2) created by Google for YouTube content creators to analyze their data. It displays basic analytics such as the number of views, shares, likes, dislikes, subscribers, and click-through rate. Additionally, it provides content creators with the freedom to visualize their data to gain more insights into the relationship between variables. The platform offers in-depth analysis of video performance, aiding content creators in improving video quality and content. Despite these features, there is currently no tool or analytics within the platform specifically designed to help creators craft effective titles and thumbnails – a critical aspect of content creation. 
+                </p>
+                <p>
+                    The focus of this research is to develop a tool that assists content creators in evaluating the quality of their titles and thumbnails. Additionally, the research aims to understand the impact that titles and thumbnails can have on users' mindsets, influencing their decision to either click or ignore the video. The fundamental question regarding the influence of titles and thumbnails on views leads to several intriguing research inquiries, outlined below. The project aims to shed light on the types of sentences and images that attract human attention, thereby affecting the click-through rate. This understanding could prove valuable across various domains, such as advertising, enabling brands to comprehend the impact of the text and images they employ in their advertisements and enhance them based on the findings of this research.
                 </p>
             </div>
         </div>
@@ -293,6 +296,234 @@
 
             </a>
             <p style="text-align:center">Fig. 13 Cleaned dataset</p style="text-align:center">
+        </div>
+    </section>   
+    <!-- clustering
+    ================================================== -->
+    <section id="Clustering" class="s-about target-section">
+        <div class="row">
+         <div class="row narrow section-intro has-bottom-sep">
+             <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>K-means & Hierarchical clustering </h1>
+             </div>
+         </div>
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    From prior research, the relationship between title length and views suggests that title length does play a role in influencing the number of views a video gains. Though the relation is not directly causal, it could be said that title length does influence views. To confirm this hypothesis, k-means clustering is performed on the data. K-means clustering is a form of unsupervised learning which helps in deriving the clusters of data that are related to one another by using a distance metric. The distance metric used for this method is the Euclidean distance. Euclidean distance takes into consideration the shortest distance between data points and thus helps in finding the closest points. The formula is provided in Fig. 14. K-means clustering is a form of partition clustering which is an algorithm that divides the dataset into sub categories based on certain criteria such as the shortest distance between the clusters and the centroid. 
+                </p>
+
+                <p> 
+                    To advance the analysis, titles undergo embedding using a VGG16 network (see Fig. 15) to extract key features from the text. The VGG16 network, commonly utilized for image recognition, is repurposed for text analysis. The title embeddings are then subjected to hierarchical clustering to identify the closest titles. Notably, the 'views' variable is not utilized in this method. Hierarchical clustering offers advantages over k-means clustering, as it does not require a fixed number of clusters to be specified, allowing for the natural structure of the data to emerge. The approach employs divisive clustering, where each data point initially forms a single cluster and subsequently divides into smaller clusters. The distance metric utilized for this method is cosine similarity, chosen for its effectiveness in measuring the similarity between embedding vectors (see formula in Fig 16).
+                </p>
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Euclidean_distance.jpeg" alt="intro_1">
+                <span>Fig. 14 Euclidean Distance Formula</span>
+                <img src="images/VGG16_architecture.jpeg" alt="intro_1">
+                <span>Fig. 15 VGG16 Architecture</span>
+                <img src="images/Consine_similarity.webp" alt="intro_1">
+                <span>Fig. 16 Cosine Similarity formula</span>
+
+        
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>
+                    To determine the influence of title length on views, the 'title_length' feature is derived by counting the number of characters in the title, while the 'views/elapsed time' ratio is considered instead of views to focus on the impact of titles relative to the time since publication. The 'views/elapsedtime' column is analyzed for outliers and subsequently removed to ensure accurate clustering. Thus, for k-means clustering, a subset of the dataset containing the 'title_length' and 'views/elapsedtime' features is used (refer Fig.17). Title embeddings are obtained by first passing the titles through a pre-trained VGG16 network with its fully connected layer removed to extract key features. The resulting features are then stored in the 'title_embedding' column. These title embeddings, along with the 'views/elapsedtime' features, are used for hierarchical clustering. Although 'views/elapsedtime' is not directly used in the clustering algorithm, it is utilized post-clustering as labels to analyze the pattern that emerges from the data. The link to the sample data can be found <a href="https://docs.google.com/spreadsheets/d/1w5Jh762GTnXEW7tQVfF4yfvjZyyU_YwRO9znSFmVTco/edit?usp=sharing" target="_blank">here</a>.
+                </p>
+            </div>
+    
+         <div class="col-six tab-full left" style="text-align:center">
+            <p> 
+            <img src="images/K-means_data.png" alt="intro_1">
+            <span>Fig. 17 Clustering Data</span>
+            </p>
+         </div>
+         <div class="col-six tab-full right" style="text-align:center">
+            <img src="images/Original_data.png" alt="intro_1">
+            <span>Fig. 18 Sample of original data</span>
+         </div>
+        </div>
+         <div class="row">
+            <div>
+                <h3>Code: </h3>
+                <p>
+                    The code to k-means clustering performed on python can be found <a href="https://colab.research.google.com/drive/1rWfW7_M6ySAT7oVtVBTT0THWUQ83A_Yu?usp=sharing" target="_blank">here</a>,
+                     and the code to hierarchical clusterinf can be found <a href="https://drive.google.com/drive/folders/13dHH_yHOReKT8-NCsJOfpfMspdSEzmzm?usp=sharing" target="_blank">here</a>
+                </p>
+            </div>
+         </div>
+
+        <div class="row">
+            <div class="col-six tab-full left">
+             <h3>Results</h3>
+             <p>
+                <h5>The k-means clustering experiment generated the following results:</h5>
+                Both the silhouette score and the elbow method indicated that k=2 was the optimal value for the clustering algorithm (refer Fig. 20 and Fig. 19). The silhouette score for k=2 was obtained as 0.57, suggesting that the majority of the points belong within the clusters with a minor overlap between them. K-means clustering was conducted on 'title_length' and 'views/elapsedtime' ratio with k=2, using a boundary of title length=50 to obtain distinct clusters. The clusters were centered at (30.18, 0.40) and (62.45, 0.50), indicating a significant relationship between YouTube title length and views (refer Fig. 21).
+                <div style="text-align:center"><img src="images/k_means_clusters.png" alt="intro_1" style="text-align:center"><span>Fig. 21 K-means clustering perfomed for 2 clusters</span></div>
+                
+             </p>              
+             <p>
+                <h5>The hierarchical clustering experiment generated the following results: </h5>
+                <p>Three clusters were obtained while clustering the title embeddings. The first cluster primarily included titles resulting in low 'views/elapsedtime' ratios. The second cluster comprised titles with predominantly high 'views/elapsedtime' ratios. The third cluster yielded mixed results, with a combination of low and high 'views/elapsedtime' ratios.
+                </p>
+                <p>
+                    Comparing Hierarchical and K-means clustering, it can be observed that there exist two clusters (though hierarchical provided three clusters the third one can be ignored as it does not capture the video performance based on views) and the video titles fall into each of these clusters based on its characteristics.
+
+                 
+                </p>
+             </p>  
+             
+
+            </div>
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/elbow_method.png" alt="intro_1">
+                <span>Fig. 19 Elbow method to find optimal K value</span>
+                <img src="images/silhouette_score.png" alt="intro_1">
+                <span>Fig. 20 Silhoutte method to find optimal K-value</span>
+        
+            </div>
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Dendogram.png" alt="intro_1">
+                <span>Fig. 22 Dendogram with hclust performed on title embeddings</span>
+        
+            </div>
+        </div>
+        <div class="row">
+            <h3>Conclusion</h3>
+            <p>
+                Based on the results, it is observed that titles with more than 50 characters had a mean 'views/elapsedtime' of 0.5 and a mean title length of 62 characters. In contrast, titles with fewer than 50 characters displayed a mean 'views/elapsedtime' of 0.4 and a mean title length of 30 characters. This suggests that videos with shorter titles performed relatively poorly compared to videos with longer titles. It is worth noting that the boundary lies at 50 characters, and given that the maximum length of a YouTube title is 100 characters, the clusters clearly differentiate shorter titles from longer titles.
+            </p>
+            <p>
+                The hierarchical clustering revealed three clusters based on title embeddings, each exhibiting varying views-to-elapsed-time ratios. The first cluster displayed a lower mean views-to-elapsed-time ratio, while the second cluster exhibited a higher mean ratio. The third cluster presented a mixture of views-to-elapsed-time ratios. This suggests that titles within the second cluster corresponded to videos with better performance compared to those in the other two clusters.
+
+            </p>
+            <p>
+               <b> In conclusion, the results of the cluster experiment indicate that titles indeed have an impact on YouTube video performance. </b> 
+
+            </p>
+        </div>
+
+    </section>
+    <section id="ARM" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>Association Rule Mining</h1>
+                
+            </div>
+         </div>
+    
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p>The conclusions drawn from clustering experiments on video titles and their impact on views suggest that titles indeed play a significant role in video performance. To deepen the analysis, association rule mining (ARM) is employed to study the relationship between title characteristics and various metrics of YouTube video performance. ARM is a method of discovering rules within data to unveil underlying relationships. These rules typically follow an 'if-then' structure, with variables on the left-hand side (LHS) as antecedents and those on the right-hand side (RHS) as consequent (refer Fig. 23)
+                </p>
+                <p>
+                    In ARM analysis, key metrics such as support, confidence, and lift are extremely important. Support indicates the proportion of the dataset containing both the LHS and RHS of a rule, while confidence represents the conditional probability of the consequent given the antecedent. Lift measures the degree of association between the antecedent and consequent, with values greater than 1 indicating a stronger relationship than would be expected by chance.
+                </p>
+                <p>
+                    The Apriori algorithm is used for association rule learning. It is specifically designed to discover frequent item sets in transactional databases and to generate association rules based on these frequent item sets.
+                </p>
+                <p>
+                    This study employs apriori algorithm to investigate the relationship between title length and various metrics of video performance, including views, subscribers gained, comments received, and likes garnered. By analyzing these associations, the research aims to uncover insights into how title characteristics influence video performance outcomes.
+
+                </p>
+               
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Antecedent_cons.png" alt="intro_1">
+                <span>Relationship between antecedent and consequent (Fig. 23)</span>
+                <img src="images/AprioriSteps.png" alt="intro_1">
+                <span>Apriori Algorithm (Fig. 24)</span>
+            
+            </div>
+        </div>
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Data prep</h3>
+                <p>
+                    To prepare the data for analysis using the Apriori algorithm, it first needs to be converted into transaction data. The original data, which is in the form of Record data (refer Fig. 25), undergoes a transformation process to create transactional records suitable for association rule mining.
+                </p>
+                <p>
+                    The transformation begins by binning the columns into categories based on an analysis of the data distribution. Each column is processed individually, with the goal of maximizing variability while maintaining equal distribution within each category. For instance, the 'title length' column is divided into 'short title' and 'long title', while the 'views/elapsed time' ratio is categorized as 'performed poorly', 'performed well', and 'performed great'.Other columns are binned as 'relatively more' or 'relatively less' compared to the median of the data. This binning process ensures that each transaction captures relevant information while reducing complexity (refer Fig. 26 for final sample dataset)
+                </p>
+                <p>
+                    In total, approximately 125,000 transactions are generated from the original data. A sample of the final transaction data is provided <a href="https://docs.google.com/spreadsheets/d/1ZjHlWa-cRtj4xNK8GRM2QOq6D--tJRH4wNCGz4Tly4g/edit?usp=sharing" target="_blank">here</a>.
+                </p>
+    
+            </div>
+        <div class="col-six tab-full right">
+            <img src="images/Original_data.png" alt="intro_1">
+            <p style="text-align:center">Fig.25 Sample of Original Data</p style="text-align:center">
+            <img src="images/ARM_data.png" alt="intro_1">
+            <p style="text-align:center">Fig.26 ARM data</p style="text-align:center">
+        </div>
+    </div>
+        </div>
+        <div class="row about-content">
+        <p> 
+            <h3>Code</h3>
+            The apriori algorithm is run on ‘R’ programming language to derive the rules from the dataset. The code can be found <a href="https://drive.google.com/drive/folders/13dHH_yHOReKT8-NCsJOfpfMspdSEzmzm?usp=drive_link" target="_blank">here</a>. 
+        </p>
+        </div>
+        <div class="row about-content">
+                <h3>Results</h3>
+                <p>
+                    The apriori algorithm was run on the dataset to obtain top 15 rules with a fixed RHS of ‘shorter titles’ for support, confidence and lift with a minimum support of 10% and a minimum confidence of 50%. ‘Short titles’ were picked to be fixed as the RHS as it helps in exploring all the patterns that exist around short titles and its impact on the performance of the videos. 
+                    The rules obtained are as follows:
+                                    
+                </p>
+                <h5>Support</h5>
+                <p>
+                    <img src="images/Support.png" alt="intro_1">
+                    <p style="text-align:center">Fig.27 Support Data</p style="text-align:center">
+                    <img src="images/top_15_support.png" alt="intro_1">
+                    <p style="text-align:center">Fig.28 Support rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The top rules based on the support metric indicate that videos with shorter titles tend to perform poorly in terms of the number of subscribers, likes, and views they accumulate over time. This observation, with a support of 35%, is significant within the dataset, suggesting a substantial association between shorter titles and lower performance metrics.
+                </p>
+                <h5>Confidence</h5>
+                <p>
+                    <img src="images/Confidence.png" alt="intro_1">
+                    <p style="text-align:center">Fig.29 Confidence Data</p style="text-align:center">
+                    <img src="images/top_15_confidence.png" alt="intro_1">
+                    <p style="text-align:center">Fig.30 Confidence rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The top 15 rules obtained from confidence suggest that similar findings of support, the confidence of the rules signifies that with an average confidence of 75% it could be said that if the video performs poorly, on an average, 75% of the times it consists of a shorter title. 
+                </p>
+                <h5>Lift</h5>
+                <p>
+                    <img src="images/Lift.png" alt="intro_1">
+                    <p style="text-align:center">Fig.31 Lift Data</p style="text-align:center">
+                    <img src="images/top_15_lift.png" alt="intro_1">
+                    <p style="text-align:center">Fig.32 Lift rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The higher lift value for the rules also suggests a very strong relationship between the antecedent and the consequent, beyond what could be expected by chance. 
+                </p>
+                
+        </div>
+        <div class="row about-content">
+            <h3>Conclusion</h3>
+            <p>
+                From the rules derived through the Apriori algorithm, a strong association emerges between <b> poor video performance and short titles </b>. Notably, an average support score of 30%, confidence level of 70%, and lift value exceeding 1 were observed for rules where poor performance metrics served as the antecedent and shorter titles as the consequent.
+            </p>
+            <p>
+                <b>The high support, confidence, and lift values confirm that titles indeed impact video views. While the precise magnitude of this impact remains unquantified, the evident relationship between titles and video performance, as revealed by both association rule mining and clustering analyses, cannot be overlooked. 
+                </b>
+            </p>
+
         </div>
     </section>   
     <!-- s-stats
