@@ -52,8 +52,8 @@
                 <li><a class="smoothscroll"  href="#DataPrep_EDA" title="DataPrep_ED">DataPrep_EDA</a></li>
                 <li><a class="smoothscroll"  href="#Clustering" title="Clustering">Clustering</a></li>
                 <li><a class="smoothscroll"  href="#ARM" title="SVMs">ARM</a></li>
-                <li><a class="smoothscroll"  href="#Regression" title="Regression">Regression</a></li>
-                <li><a class="smoothscroll"  href="#DecTrees" title="DecTrees">DecTrees</a></li>
+                <li><a class="smoothscroll"  href="#NaiveBayes" title="Naive Bayes">Naive Bayes</a></li>
+                <li><a class="smoothscroll"  href="#DecTrees" title="DecTrees">Decision Trees</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="Contact">Contact</a></li>
                 
             </ul>
@@ -122,6 +122,9 @@
                 </p>
                 <p>
                     The focus of this research is to develop a tool that assists content creators in evaluating the quality of their titles and thumbnails. Additionally, the research aims to understand the impact that titles and thumbnails can have on users' mindsets, influencing their decision to either click or ignore the video. The fundamental question regarding the influence of titles and thumbnails on views leads to several intriguing research inquiries, outlined below. The project aims to shed light on the types of sentences and images that attract human attention, thereby affecting the click-through rate. This understanding could prove valuable across various domains, such as advertising, enabling brands to comprehend the impact of the text and images they employ in their advertisements and enhance them based on the findings of this research.
+                </p>
+                <p>
+                    Such a tool could aid YouTube content creators in tailoring titles and thumbnails to any category of videos by analyzing their effectiveness in gaining traction and ultimately popularity on the platform. Though the tool does not guarantee success on YouTube, it assists in ensuring that visible aspects to the audience are tailored according to their needs, potentially increasing views. Research in the field of the impact of titles and thumbnails on views is not only important for creating a tool to enhance content creators' channel views but also for understanding the psychological impact of text and images on human behavior and its influence on video click-through rates. Understanding these psychological aspects could lead to the development of stronger advertising and marketing models.
                 </p>
             </div>
         </div>
@@ -463,7 +466,7 @@
             </div>
         <div class="col-six tab-full right">
             <img src="images/Original_data.png" alt="intro_1">
-            <p style="text-align:center">Fig.25 Sample of Original Data</p style="text-align:center">
+            <p style="text-align:center">Fig.25 Sample of Original Cleaned Data</p style="text-align:center">
             <img src="images/ARM_data.png" alt="intro_1">
             <p style="text-align:center">Fig.26 ARM data</p style="text-align:center">
         </div>
@@ -526,6 +529,298 @@
 
         </div>
     </section>   
+    <section id="NaiveBayes" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>Naive Bayes Classifier</h1>
+                
+            </div>
+         </div>
+    
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p>
+                    The main principle behind the Multinomial Naive Bayes algorithm is based on Bayes’ theorem (refer Fig. 33), which assists Multinomial Naive Bayes classifiers in determining the probability of a given set of features belonging to a set of classes. Multinomial Naive Bayes is used in scenarios where the data are presented in a categorical format. During training, the model learns the probability of each feature occurring in a given class. This allows it to develop a probabilistic understanding of the dataset. The probabilities calculated during training are then used during testing. This enables the model to predict the likelihood of a given set of unseen feature values and select the class with the highest probability. The Naive Bayes algorithm as a whole assumes independence between features, which is why it earned the name 'naive' Bayes. In this particular project, the Naive Bayes model is used to predict the performance categories such as 'Performed Poorly' or 'Performed Well' based on the given YouTube titles.
+                </p> 
+                <p>
+                
+                 Bernoulli Naive Bayes is another variant of the Naive Bayes algorithm specifically designed to handle binary data. It measures the presence or absence of a particular attribute in a dataset. Bernoulli Naive Bayes also makes the assumption that features are independent of one another. This means that the presence or absence of one feature does not affect the presence or absence of another feature. During training, Bernoulli Naive Bayes calculates the probability of each feature occurring or not occurring in each class. It does this by counting the number of occurrences of each feature in each class and dividing by the total number of documents in that class (refer Fig. 34).
+                    
+                </p>
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/DT_NB/MNB_formula.png" alt="intro_1">
+                <span>Multinomial Naive Bayes formula (Fig. 33)</span>
+                <img src="images/DT_NB/BNB_formula.png" alt="intro_1">
+                <span>Bernoulli Naive Bayes formula (Fig. 34 )</span>
+                <img src="images/DT_NB/Laplace_Formula.png" alt="intro_1">
+                <span>Laplacian Smoothing Formula (Fig. 35)</span>
+                <h5>Importance of smoothing in Naive Bayes</h5>
+                <p style="text-align:left">
+                    Smoothing is a process aimed at preventing occurrences of zero probabilities when testing datasets. During testing, there may be instances where a particular feature has no occurrence in the training dataset, while other features may occur simultaneously. This situation would erroneously result in a zero probability for the entire test dataset, despite the chances of occurrence not being truly zero. To address this issue, various smoothing techniques such as Laplace smoothing (add-one smoothing), Lidstone smoothing, or Dirichlet smoothing are employed. By utilizing smoothing methods like Laplace smoothing, we ensure that neither the numerator nor the denominator in probability calculations becomes zero. Fig. 35 provides the formula for the most commonly used Laplace smoothing method.
+                </p>
+            
+            </div>
+        </div>
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Data preparation</h3>
+                <p>
+                    The data preparation stage of Naive Bayes was conducted in three steps,
+                    <li>
+                        The quantitative feature ‘views/elapsedtime’ from the cleaned dataset (Refer Fig. 36) was transformed into a qualitative feature by categorizing all values less than 0.1 as "Performed Poorly" and those greater than 0.1 as "Performed Well" (Refer Fig. 37). The value 0.1 was chosen as the cutoff point as it represents the 50th percentile of the column. 
+                    </li>
+                    <li>
+                        The 'titles' column underwent transformation using the TF-IDF function to represent the text in a format suitable for input into the Naive Bayes algorithm. Term Frequency Inverse Document Frequency (TF-IDF) is an algorithm that assigns numerical values to each word in a sentence based on its importance within the 'titles' column. This method aids in representing the text meaningfully. (Refer Fig. 38)
+                    </li>
+                    <li>
+                        The two transformed columns, 'views/elapsedtime' and 'titles', were subsequently extracted to form a separate data frame. This data frame was then divided into training (Refer Fig. 37 and Fig. 38) and testing sets (Refer Fig. 39). The data was partitioned into disjoint chunks for the two categories to enable training on one set of data and testing on unseen data. This approach assists in identifying potential overfitting during training, thereby aiding in the analysis of the model's capabilities. Sample test and Training Data can be found <a href="https://drive.google.com/drive/folders/1wCLZnrjDjBWjYv5P0u4Frp6p9fvqbK0d?usp=sharing" target="_blank">here</a>
+                    </li>
+                </p>
+                <img src="images/DT_NB/Sample_X_test_NB.png" alt="intro_1">
+                <p style="text-align:center">Fig.39 Test data sample</p style="text-align:center">
+                <h3>Code</h3>
+                <p>The code to Naive Bayes’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1xa4Eeqxb6zmgTlQc0NeD25Z9GFJx6xu-?usp=sharing" target="_blank">here</a>. </p>
+                <img src="images/DT_NB/Accuracy_NB_1.png" alt="intro_1">
+                <p style="text-align:center">Fig.40 Model Evaluation Metric</p style="text-align:center">
+                <img src="images/DT_NB/Accuracy_NB_2.png" alt="intro_1">
+                <p style="text-align:center">Fig.41 Model Evaluation Metric</p style="text-align:center">
+            </div>
+            <div class="col-six tab-full right">
+             <img src="images/Original_data.png" alt="intro_1">
+             <p style="text-align:center">Fig.36 Sample of Original Data</p style="text-align:center">
+             <img src="images/DT_NB/Sample_X_train_NB.png" alt="intro_1">
+             <p style="text-align:center">Fig.37 Training data sample</p style="text-align:center">
+             <img src="images/DT_NB/Sample_Y_train_NB.png" alt="intro_1">
+             <p style="text-align:center">Fig.38 Training data sample</p style="text-align:center">
+            </div>
+    
+          <div class="col-six tab-full right">
+              <h3>Results</h3>
+              <p>
+                The Multinomial Naive Bayes model was trained on the training dataset with the alpha parameter set to 0.2 for implementing Laplace smoothing. The results were obtained by running the model on the test dataset, as shown in Figure 40. It is evident from the results that both the accuracy and precision of the model were approximately 58% for both labels. However, the recall varied slightly, with the 'Performed Poorly' label scoring 53% and the 'Performed Well' label scoring 64%. Additionally, the average accuracy, precision, recall, and F1 score for the model were approximately 58%, as depicted in Figure 41.
+              </p>
+              <p>
+                Furthermore, analyzing the confusion matrix (Figure 42), it is evident that both labels exhibit an equal distribution throughout the matrix, indicating that the model has successfully learned both features equally.
+              </p>
+              <p>
+                <img src="images/DT_NB/Confusion_Matrix_Naive_Baiyes_Before_smoothing.png" alt="intro_1">
+                <p style="text-align:center">Fig.42 Naive Bayes Confusion Matrix</p style="text-align:center">
+              </p>
+          </div>
+        </div>
+    <div class="row about-content">
+            <h3>Conclusion</h3>
+            <p>
+                The results suggest that while the model wasn't able to capture all the patterns between the 'titles' feature and the 'views/elapsedtime' feature from the dataset, it did demonstrate the existence of some patterns. With accuracy, precision, and recall hovering around 58%, the model performed better than random guessing. However, it falls short of being able to make meaningful predictions due to inadequate training on the dataset.
+            </p>
+            <p>
+                <b>These outcomes align with expectations for Naive Bayes classifiers, which are basic probabilistic classifiers lacking the advanced capability to discern complex patterns present in text documents. While unsupervised learning algorithms and Naive Bayes have indicated a relationship between YouTube titles and their corresponding views, more sophisticated algorithms such as CNN or LSTM could better capture and learn intricate patterns from the dataset. These advanced models are adept at handling sequential data like text and could potentially yield more accurate predictions by extracting deeper insights from the 'titles' feature in relation to 'views/elapsedtime'.
+                </b>
+            </p>
+
+    </div>
+    </section>   
+    <section id="DecTrees" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Decision Trees.</h1>
+                
+            </div>
+         </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Decision trees (refer Figure 43) are supervised machine learning algorithms, suitable for both classification and regression tasks. The algorithm operates by partitioning the dataset's features into smaller sets with the help of input features, aiming to predict the output feature. The model trains itself by adjusting the decision of splits at each node, aiming to find the best split using either the Gini Index or Information Gain. 
+                </p>
+                <p>
+                    <h5>What is Gini Index?</h5>
+                    Gini index is a measure of the impurity present in the dataset, also referred to as entropy. In the context of decision trees, it calculates how often a randomly chosen element from the set would be incorrectly classified if it were randomly labeled according to the distribution of labels in the subset. The formula for the same is given in Fig. 44. 
+                </p>
+                <h5 style="text-align:left">What is Entropy ?</h5>
+                <p style="text-align:left">
+                    Entropy measures the amount of disorder or uncertainty in the dataset, the formula is provided in Figure 45. It is commonly used in making decisions at nodes in the decision trees. Entropy minimization is the aim while making decisions on a decision tree. Maximum entropy would mean that the classes are evenly distributed and consist of maximum disorder.
+                </p>
+                <img src="images/DT_NB/Entropy_formula.png" alt="intro_1">
+                <p style="text-align:center">Entropy formula (Fig. 45)</p style="text-align:center">
+                <img src="images/DT_NB/Information_gain.png" alt="intro_1">
+                <p style="text-align:center">Information Gain formula (Fig. 46)</p style="text-align:center">
+               
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/DT_NB/DT_image.png" alt="intro_1">
+                <p style="text-align:center">Decision Tree Example (Fig. 43)</p style="text-align:center">
+                <img src="images/DT_NB/Gini_formula.png" alt="intro_1">
+                <p style="text-align:center">Gini Index formula (Fig. 44)</p style="text-align:center">
+                <h5 style="text-align:left">What is Information Gain ?</h5>
+                <p style="text-align:left">
+                    Information Gain quantifies the amount of information or pattern a particular subset of data would capture if it's split at that particular node, which measures the reduction in entropy achieved by a split. Entropy (refer Figure 45) measures the amount of disorder or uncertainty in the dataset. The main aim of the method is to reduce the uncertainty such that the model is able to learn patterns in the dataset. Higher the information gain the better is the split.  The formula for the same is given in Fig. 46. While this particular project aims at utilizing Gini Index as the split parameter, many applications use Information Gain and entropy to make decisions.
+                </p>
+                <p style="text-align:left">
+                    The process of making predictions for testing is fairly simple: the tree is traversed from the root node by making decisions at each internal node based on the feature values of the data point and the splitting parameter (Gini Index in our case). The prediction is the value obtained at the final node, which is the leaf node.
+
+                </p>
+            </div>
+            </div>
+            <div class="row about-content">
+                    <h3>Data Preparation</h3>
+                    <p>
+                        The data preparation stage of decision tree classifier was conducted in multiple steps,
+
+                    </p>
+                    <li>
+                        The qualitative 'title' feature was transformed from the original cleaned dataset (Fig. 25) into quantitative vectors using two different embeddings: SpaCy and BERT. SpaCy, trained on large text corpora, learns various word embeddings and linguistic properties beneficial for NLP tasks like classification, named entity recognition, and part-of-speech tagging. While effective, SpaCy's capabilities are surpassed by BERT, a more advanced model trained rigorously on understanding textual nuances. BERT is commonly utilized for complex NLP tasks such as summarization, question answering, and error correction. By leveraging both SpaCy and BERT embeddings, the model gains a comprehensive understanding of the linguistic properties within the 'title' feature, facilitating accurate quantitative representation. The two embeddings are employed to evaluate their effectiveness in capturing the properties of the text documents in the project. Depending on which embedding works best for the decision trees, it could be selected as the primary embedding for further analysis.
+                    </li>
+                    <li>
+                        Once the 'title' feature was transformed into SpaCy and BERT embeddings, The quantitative target feature ‘views/elapsedtime’ from the cleaned dataset was transformed into a qualitative feature by categorizing all values less than 0.1 as "Performed Poorly" and those greater than 0.1 as "Performed Well" (Refer Fig. 47). The value 0.1 was chosen as the cutoff point as it represents the 50th percentile of the column.
+                    </li>
+                    <li>
+                        The two transformed columns, 'views/elapsedtime' and 'titles', were subsequently extracted to form two separate data frames—one containing SpaCy embeddings and the other containing BERT embeddings. These data frames were then divided into training (80%) (Refer Fig. 47) and testing sets (20%) (Refer Fig. 48). The data was partitioned into disjoint chunks for the two categories to facilitate training on one set of data and testing on unseen data. This approach helps identify potential overfitting during training, thereby aiding in the analysis of the model's capabilities. Sample test and Training Data can be found <a href="https://drive.google.com/drive/folders/1wCLZnrjDjBWjYv5P0u4Frp6p9fvqbK0d?usp=sharing" target="_blank">here</a>
+                    </li>
+                    <p> Click on each of the images below to view the sample dataset in each category. </p>
+                    <img src="images/Original_data.png" alt="intro_1">
+                    <p style="text-align:center">Fig.25 Sample of Original Cleaned Data</p style="text-align:center">
+                     
+            </div>
+            <div class="col-six tab-full left">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Train Data</h3>
+                            <h5>BERT Embeddings (Fig. 47)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_train_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_train_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_train_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Train Data</h3>
+                            <h5>SpaCy Embeddings (Fig. 47)</h5>
+                        </div>
+                        <div class="timeline__desc">	
+                            <a href="images/DT_NB/Sample_X_train_SpaCy_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_train_SpaCy_DT.png" alt="intro_1" style="width:280px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_train_DT.png" alt="intro_1" style="width:120px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end left -->
+
+            <div class="col-six tab-full right">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Test Data</h3>
+                            <h5>BERT Embeddings (Fig. 48)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_test_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_test_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_test_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_test_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Test Data</h3>
+                            <h5>SpaCy Embeddings (Fig. 48)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_train_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_test_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_test_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end right -->
+            <h3>Code</h3>
+            <div>
+                
+                <p> 
+                    The code to Decision Tree Classifier performed on python can be found here: <a href="https://colab.research.google.com/drive/1wJz5Jrl1mB8cSsF6oMhF869BbMvpQw3o?usp=sharing" target="_blank">SpaCy</a>, <a href=" https://colab.research.google.com/drive/1xa4Eeqxb6zmgTlQc0NeD25Z9GFJx6xu-?usp=sharing" target="_blank">BERT</a>
+                </p>
+
+            </div>
+            <div class="row about-content">
+                
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        The Decision Tree Model was trained on the training dataset, and the results were obtained from the testing dataset and visualized in Figure 49. Analysis of the visualization reveals that both the accuracy and recall metrics, derived from both BERT and SpaCy embeddings, achieved scores in the vicinity of 55%. Initially trained with the default 'max_depth' parameter, the model exhibited signs of overfitting, evident from the complex tree structure observed in Figure 50. However, upon adjusting the 'max_depth' parameter to 5, the model demonstrated improved fitting to the dataset, as depicted in Figure 51 (a) and Figure 51 (b).
+                    </p>
+    
+                </div>
+    
+                <div class="col-six tab-full right">
+                    <img src="images/DT_NB/DT_accuracy_Recall.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree evaluation metric (Fig. 49)</p style="text-align:center">
+                </div>
+                    <img src="images/DT_NB/decision_tree_plot_Maxdepth10.png" alt="intro_1">
+                    <p style="text-align:center">Initial Decision tree (Fig. 50)</p style="text-align:center"> 
+                    <img src="images/DT_NB/Decision_tree_plot_BERT.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree using BERT Embeddings (Fig. 51 (a))</p style="text-align:center">
+                    <img src="images/DT_NB/Decision_tree_SpaCy.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree using SpaCy Embeddings (Fig. 51 (b))</p style="text-align:center">
+                    <p>
+                            Furthermore, examination of the confusion matrix, Fig. 52 (a) and Fig. 52 (b) from both embeddings indicates an even distribution of both labels throughout the matrix. This uniform distribution suggests that the model effectively learned both features with equal proficiency.
+                    </p>
+                    <img src="images/DT_NB/Confusion_matrix_BERT_DT.png" alt="intro_1" style="width:400px; height:350px;">
+                    <img src="images/DT_NB/Confusion_matrix_Spacy.png" alt="intro_1" style="width:400px; height:350px;">
+                    <p>Confusion Matrix for BERT and SpaCy Embeddings DT (Fig. 52 (a) and Fig. 52 (b))</p>   
+                    <p>
+                        <h3>Conclusion</h3>
+                        <p>In conclusion, the experiment revealed that the decision tree classifier struggled to effectively train on the dataset due to its complexity. Nonetheless, the findings suggest the presence of a discernible pattern between YouTube video titles and their corresponding views over time. Although setting the 'max_depth' parameter to 5 helped prevent overfitting, it did not significantly improve model accuracy on the test dataset.
+                        </p>
+                        <p>
+                            The experiment, conducted using both BERT and SpaCy embeddings, aimed to observe any differences in predictions. Surprisingly, both embeddings performed similarly, indicating that the decision tree classifier may not effectively leverage the advanced linguistic characteristics captured by BERT. <b>This suggests that the decision tree classifier may not be the optimal model for capturing the complex patterns within text documents. Moving forward, it is evident that employing more advanced models like CNN or LSTMs may yield better classification results by effectively leveraging the intricate linguistic features present in the text. </b>
+                        </p>
+                    </p>
+                </div>
+
+
+        </div> <!-- end about-content timeline -->
+    
+    </section>
+
+
+
     <!-- s-stats
     ================================================== -->
     <section id="contact" class="s-contact target-section" >
