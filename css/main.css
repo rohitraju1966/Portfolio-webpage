@@ -2354,7 +2354,7 @@ html.no-csstransitions .home-content__main {
 
 .s-works {
     padding-top: 15rem;
-    padding-bottom: 10rem;
+    padding-bottom: 15.6rem;
     background-color: #f1f1f1;
     position: relative;
 }
@@ -2377,18 +2377,15 @@ html.no-csstransitions .home-content__main {
 }
 
 .masonry .grid-sizer, .masonry__brick {
-    width: 350px;
+    width: 400px;
 }
 
 .masonry__brick {
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-    margin-left: 0rem;
-    float: inline-start;
+    float: left;
     padding: 0;
 }
 
-.item-folios {
+.item-folio {
     position: relative;
     overflow: hidden;
 }
@@ -2528,12 +2525,12 @@ html.no-csstransitions .home-content__main {
 
 /* on hover */
 
-.item-folios:hover .item-folio__thumb a::before {
+.item-folio:hover .item-folio__thumb a::before {
     opacity: 1;
     visibility: visible;
 }
 
-.item-folios:hover .item-folio__thumb a::after {
+.item-folio:hover .item-folio__thumb a::after {
     opacity: 1;
     visibility: visible;
     -webkit-transform: scale(1);
@@ -2541,13 +2538,13 @@ html.no-csstransitions .home-content__main {
     transform: scale(1);
 }
 
-.item-folios:hover .item-folio__thumb img {
+.item-folio:hover .item-folio__thumb img {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
-.item-folios:hover .item-folio__project-link {
+.item-folio:hover .item-folio__project-link {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
@@ -2877,7 +2874,7 @@ html.no-csstransitions .home-content__main {
 
 .s-cta {
     margin-top: -9rem;
-    padding-top: 10rem;
+    padding-top: 0;
     padding-bottom: 9rem;
     background-color: #FFFFFF;
     position: relative;
@@ -3167,7 +3164,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .message-warning {
-    color: #008C2C;
+    color: #ff6163;
 }
 
 .message-success {
