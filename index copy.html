@@ -49,11 +49,13 @@
         <nav class="header-nav-wrap">
             <ul class="header-nav">
                 <li class="current"><a class="smoothscroll"  href="#Introduction" title="Introduction">Introduction</a></li>
-                <li><a class="smoothscroll"  href="#DataPrep_EDA" title="DataPrep_ED">DataPrep_EDA</a></li>
+                <li><a class="smoothscroll"  href="#DataPrep_EDA" title="DataPrep_ED">DataPrep & EDA</a></li>
                 <li><a class="smoothscroll"  href="#Clustering" title="Clustering">Clustering</a></li>
                 <li><a class="smoothscroll"  href="#ARM" title="SVMs">ARM</a></li>
                 <li><a class="smoothscroll"  href="#NaiveBayes" title="Naive Bayes">Naive Bayes</a></li>
                 <li><a class="smoothscroll"  href="#DecTrees" title="DecTrees">Decision Trees</a></li>
+                <li><a class="smoothscroll"  href="#SVM" title="SVM">SVM</a></li>
+                <li><a class="smoothscroll"  href="#Conclusion" title="SVM">Conclusion</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="Contact">Contact</a></li>
                 
             </ul>
@@ -119,6 +121,9 @@
             <div>
                 <p>
                     YouTube Analytics Application is a platform (Fig. 2) created by Google for YouTube content creators to analyze their data. It displays basic analytics such as the number of views, shares, likes, dislikes, subscribers, and click-through rate. Additionally, it provides content creators with the freedom to visualize their data to gain more insights into the relationship between variables. The platform offers in-depth analysis of video performance, aiding content creators in improving video quality and content. Despite these features, there is currently no tool or analytics within the platform specifically designed to help creators craft effective titles and thumbnails – a critical aspect of content creation. 
+                </p>
+                <p>
+                    Several studies have examined the impact of YouTube thumbnails and titles on views and video performance. Cheng et al. (2015) demonstrated that both titles and thumbnails significantly influence video views, with thumbnails being slightly more influential. Cheng et al. investigated the impact of YouTube metadata on views using statistical analysis rather than applying machine learning concepts. Koh et al. (2018) emphasized the importance of visually appealing thumbnails in enhancing video performance over time. Their study suggests that creating visually appealing thumbnails does indeed impact video performance, as visually appealing videos were observed to perform better. The study also employed a statistical approach to understanding the impact of thumbnails on views. Dong et al. (2024) conducted research similar to Koh et al. to study the impact of visually appealing thumbnails on views. They observed a significant correlation between thumbnail design and video metrics, notably emphasizing the positive impact of a distant background, focusing on one person, and using concise headings. Similar to the other papers, this study approached the effect through a statistical analysis standpoint.
                 </p>
                 <p>
                     The focus of this research is to develop a tool that assists content creators in evaluating the quality of their titles and thumbnails. Additionally, the research aims to understand the impact that titles and thumbnails can have on users' mindsets, influencing their decision to either click or ignore the video. The fundamental question regarding the influence of titles and thumbnails on views leads to several intriguing research inquiries, outlined below. The project aims to shed light on the types of sentences and images that attract human attention, thereby affecting the click-through rate. This understanding could prove valuable across various domains, such as advertising, enabling brands to comprehend the impact of the text and images they employ in their advertisements and enhance them based on the findings of this research.
@@ -819,6 +824,210 @@
     
     </section>
 
+    <section id="SVM" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Support Vector Machines.</h1>
+                
+            </div>
+         </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Support Vector Machine (SVM) (refer Fig. 53) is one of the most advanced supervised machine learning algorithms, known for its capability in creating decision boundaries around complex classes. SVMs excel when the classes are separable, and a clear boundary can be defined between them. The primary goal of SVM is to find the hyperplane that maximizes the margin between these classes.
+                <p>
+                    <h5>SVMs: The linear separators </h5>
+                    SVMs are often referred to as linear separators because of their capability to find a linear decision boundary between classes. SVMs perform best when the classes are linearly separable, as the algorithm aims to find a mathematical equation such as a line or hyperplane that maximizes the distance between the classes, Refer to Fig. 54 for an example. Although SVMs are termed as linear separators, they are capable of delineating boundaries around non-linear data using kernels. Kernels are functions that map the input data to a higher dimension where linear separation becomes possible.
+                </p>
+                <h5 style="text-align:left">How do Kernels work? </h5>
+                <p style="text-align:left">
+                    Kernels, as mentioned earlier, are used in situations where the classes are not linearly separable (Refer to Fig. 55). Kernels help in transforming the input data to a higher dimension in the hope of finding a linear separator in that space. Kernels are fascinating functions because they allow SVMs to compute the decision boundary in the original feature space as if it were a higher-dimensional space. Kernels are specific types of functions that compute the dot product efficiently without explicitly transforming the data into the higher-dimensional space.
+                </p>
+                <p style="text-align:left">
+                    The dot product is extremely helpful in kernels because it leverages the fact that SVMs only need to calculate the dot product between data points in the feature space, avoiding the explicit computation of vectors in a higher-dimensional space. Kernels compute the dot product directly in the higher-dimensional space, thereby reducing the complexity of calculations and allowing for efficient computation without the need for explicit transformation.
+                </p>
+               
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/SVM/Image_1.jpeg" alt="intro_1">
+                <p style="text-align:center">SVM Architecture (Fig. 53)</p style="text-align:center">
+                <img src="images/SVM/Image_2.jpeg" alt="intro_1">
+                <p style="text-align:center">An SVM example for linearly separable (Fig. 54)</p style="text-align:center">
+                <h5 style="text-align:left">Polynomial and RBF kernel</h5>
+                <p style="text-align:left">
+                    The Polynomial Kernel function (Refer Fig. 56) computes a dot product between the input vectors in the original feature space and raises the sum by the specified degree d. The constant c allows for shifting the polynomial. On the other hand, the Radial Basis Function (RBF) Kernel (Refer Fig. 56) measures the similarity between vectors based on the Euclidean distance.
+                </p>
+                <img src="images/SVM/Image_4.png" alt="intro_1">
+                <p style="text-align:center">Polynomial Kernel formula (Fig. 56)</p style="text-align:center">
+
+            </div>
+            <div style="text-align: center;">
+                <img src="images/SVM/Image_3.png" alt="intro_1">
+                <p style="text-align:center">SVM classifier on various kernels (Fig. 55)</p>
+            </div>
+            </div>
+            <div class="row about-content">
+                    <h3>Data Preparation</h3>
+                    <p>
+                        The data preparation stage began with, collecting thumbnail URLs using a YouTube API request (refer to Fig. 57), followed by extracting the thumbnails using another Google Drive API request (refer to Fig. 58). Subsequently, the thumbnails were pre-processed using the VGG16 neural network to extract the most important features from the images. The output of the VGG16 network was then stored in a numpy file to be used as input for the SVM model. The model is then trained to predict if the thumbnails would fall into the category of the video performing well or performing poorly. The link to the dataset can be found <a href="https://drive.google.com/file/d/1-8jc6hXnBlEOQkJTOu90utcydQ1KMBec/view?usp=sharing." target="_blank">here</a>. The link to the sample thumbnails extracted can be found <a href="https://drive.google.com/drive/folders/1WRS8AwcwnveJoy1ynoUqwDZyH_3_3n4o?usp=drive_link" target="_blank">here</a>.
+                    </p>
+                    <p> Click on each of the images below to view the sample dataset in each category. </p>
+                    <img src="images/Original_data.png" alt="intro_1">
+                    <p style="text-align:center">Fig.57 Sample of Original Cleaned Data</p style="text-align:center">
+                    <img src="images/SVM/Image_5.png" alt="intro_1">
+                    <p style="text-align:center">Fig.58 Sample of thumbnails extracted</p style="text-align:center">
+                     
+            </div>
+
+            <h3>Code</h3>
+            <div>
+                
+                <p> 
+                    The code to Support Vector Machine Classifier performed on python can be found here: <a href="https://colab.research.google.com/drive/157zPvIs7lG45K_LCdLnz4jp1ap_AejwU?usp=sharing" target="_blank">SVM</a>.
+                </p>
+
+            </div>
+            <div class="row about-content">
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        The output of VGG16 was used as input for various SVM models fine-tuned with different kernels and C values. These models were evaluated based on precision, accuracy, recall, and F1-score. The results obtained were compiled into a table, as shown in Table 1. Confusion matrices for the SVM models can be found in Figures 59, 60, 61.
+                    </p>
+                    <p>
+                        It was observed that the RBF kernel with a C value of 1 yielded the best result, achieving an accuracy of 60%, precision of 62%, recall of 60%, and F1-score of 61%. These results are depicted in Figure 62. The linear kernel performed next best, consistently achieving similar results across different C values, with an accuracy of 56%, precision of 58%, recall of 57%, and F1-score of 57.5%. The polynomial kernel performed the least favorably, with the highest scores achieved at a C value of 10, resulting in an accuracy of 59%, precision of 63%, recall of 48%, and F1-score of 54%. Despite exhibiting higher precision and accuracy, the polynomial kernel tended to underfit the data.
+                    </p>
+                </div>
+
+                <div class="col-six tab-full right">
+                    <div style="text-align: center;">
+                        <img src="images/SVM/Image_6.png" alt="intro_1" style="margin-top: 150px;">
+                        <p style="text-align:center">SVM evaluation metric (Fig. 62)</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center;">
+                <img src="images/SVM/Image_14.png" alt="intro_1">
+                <p style="text-align:center">SVM classifier on various kernels (Table. 1)</p>
+            </div>
+
+            <div class="col-six tab-full left">
+                    <div class="timeline">
+    
+                        <div class="timeline__block">
+                            <div class="timeline__header">
+                                <h3>Linear Kernel</h3>
+                                <h5>C Value equal to 1 (Fig. 59)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/SVM/Image_7.png" target="_blank">
+                                    <img src="images/SVM/Image_7.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> <!-- end timeline__block -->
+    
+                    </div> <!-- end timeline -->
+            </div> <!-- end left -->
+    
+            <div class="col-six tab-full right">
+                    <div class="timeline">
+    
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <h3>Polynomial Kernel</h3>
+                                <h5>C value equals to 1 (Fig. 61)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/SVM/Image_9.png" target="_blank">
+                                    <img src="images/SVM/Image_9.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> <!-- end timeline__block -->
+
+    
+    
+                    </div> <!-- end timeline -->
+            </div> <!-- end right -->
+            <center>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>RBF Kernel</h3>
+                            <h5>C Value equal to 1 (Fig. 60)</h5>
+                        </div>
+                        <div class="timeline__desc">   
+                            <a href="images/SVM/Image_8.png" target="_blank">
+                                <img src="images/SVM/Image_8.png" alt="intro_1" style="width:500px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+            </center>
+
+            
+                
+            <h3>Conclusion</h3>
+            <p>In conclusion, the evaluation of SVM models with various kernels and C values using VGG16-extracted features has provided insights into their performance on image classification tasks. Among the experiments conducted, the RBF kernel with a C value of 1 emerged as the winner, exhibiting strong overall performance with balanced accuracy, precision, recall, and F1-score metrics. The consistent performance of the linear kernel across different C values highlights its reliability for this task. However, the polynomial kernel, particularly at higher C values, showed signs of potential overfitting or underfitting, this shows the importance of careful parameter selection. 
+            </p>
+
+
+        </div> <!-- end about-content timeline -->
+    
+    </section>
+
+    <section id="Conclusion" class="s-about target-section">
+        <div class="row">
+         <div class="row narrow section-intro has-bottom-sep">
+             <div class="col-full">
+                <h3>Conclusion</h3>
+                <h1>The final conclusion</h1>
+             </div>
+         </div>
+            <div class="col-six tab-full left">
+
+                <p> 
+                    To explore the captivating world of YouTube titles and thumbnails and their impact on views, this study delves deep into how these aspects can influence video performance over time. By analyzing these factors, valuable insights are uncovered on how to improve channel performance. Firstly, the research reveals patterns regarding the impact of title length on video performance, noting that longer titles tend to attract higher viewership (refer Fig. 61) compared to shorter ones  (refer Fig. 62). This suggests that while attention-grabbing titles are crucial, providing a sufficiently detailed title is also essential to attract viewers. Additionally, there is a direct correlation between title length and video performance metrics such as likes, comments, and subscribers gained.
+                </p>
+
+                <p> Moreover, the study highlights the significance of visual appeal through thumbnail design, showing that careful thumbnail design is vital for enhancing video performance. Specific colors, images, or styles may be more effective in capturing viewer interest and encouraging clicks on the video (refer Fig. 63,64). The interplay between titles and thumbnails plays a crucial role in attracting views, with effective thumbnails that complement the title contributing to higher view counts. Certain combinations of thumbnails and titles may perform exceptionally well by increasing viewership and setting clear expectations about the video content. Therefore, crafting a compelling title and thumbnail is considered the initial step towards a successful video.
+                </p>
+                <img src="images/SVM/Image_12.png" alt="intro_1">
+                <p style="text-align:center">Fig. 63 Attractive Thumbnail</p style="text-align:center">
+                <img src="images/SVM/Image_13.png" alt="intro_1">
+                <p style="text-align:center">Fig. 64 Attractive Thumbnail Example 2</p style="text-align:center">
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/SVM/Image_10.png" alt="intro_1">
+                <p style="text-align:center">Fig. 61 Short Title</p style="text-align:center">
+                <img src="images/SVM/Image_11.png" alt="intro_1">
+                <p style="text-align:center">Fig. 62 Long Title</p style="text-align:center">
+                <p>The relationship between the recommendation system and optimizing titles and thumbnails is another intriguing aspect. As titles and thumbnails directly impact the number of views a video gains, they likely influence the recommendation system, which heavily relies on video click-through rates. Understanding peak viewer activity times can help optimize content release schedules for maximum visibility and engagement. Additionally, demographic factors play a role in viewer preferences for thumbnails and titles. Different audience segments may respond differently to specific colors, images, or content styles, highlighting the importance of audience segmentation and targeting in content creation.
+                </p>
+                <p>
+                    Future studies could focus on developing advanced systems to learn the combinations of titles and thumbnails that attract views. By employing such advanced systems, YouTube content creators can benefit from crafting appropriate titles and thumbnails for their videos. Analyzing the impact of click-through rates on video performance, rather than absolute view counts, can provide insights into video recommendation system behavior. Furthermore, assessing the relationship between views and video duration can improve video content and overall performance. The field of youtube has so much potential for analysis with all the numbers that flow in every second from videos around the world. Conducting future research in the field and carefully examining the nature of the titles and thumbnails can bring our analysis not just in the field of youtube but also a general understanding of the human brain by learning the patterns that tend a youtube recommendation to be converted to a view. 
+
+                </p>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>
+                    In conclusion, the findings underscore the importance of both the art and science behind video content creation on YouTube.Effective thumbnail design, aptly summarized by the saying <b>'A picture is worth a thousand words'</b>, along with compelling titles and a profound understanding of viewer behavior, serves as the cornerstone for enhancing video performance and fostering audience engagement. This holistic approach to content optimization opens up new opportunities for creators to connect with their audiences and thrive in the dynamic world of digital content. Furthermore, the insights gained from this analysis are not limited to content creators alone; they also hold significant potential for advertisements and marketing strategies. By identifying patterns in visual elements that attract attention, advertisers and marketing professionals can leverage this knowledge to attract more customers to their products or services. UX designers can also apply the findings from this research study of effective content creation by improving the user experience. By considering factors such as titles and thumbnails designs, the designers can get much more creative in creating engaging user interfaces attracting human attention. 
+
+                </p>
+            </div>
+        </div>
+    </section>
 
 
     <!-- s-stats
