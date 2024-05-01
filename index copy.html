@@ -864,7 +864,8 @@
                 <p style="text-align:left">
                     The dot product is extremely helpful in kernels because it leverages the fact that SVMs only need to calculate the dot product between data points in the feature space, avoiding the explicit computation of vectors in a higher-dimensional space. Kernels compute the dot product directly in the higher-dimensional space, thereby reducing the complexity of calculations and allowing for efficient computation without the need for explicit transformation.
                 </p>
-               
+                <img src="images/SVM/Image_3.png" alt="intro_1" style="width: 90%;">
+                <p style="text-align:left">SVM classifier on various kernels (Fig. 55)</p>
             </div>
 
             <div class="col-six tab-full right">
@@ -874,15 +875,13 @@
                 <p style="text-align:center">An SVM example for linearly separable (Fig. 54)</p style="text-align:center">
                 <h5 style="text-align:left">Polynomial and RBF kernel</h5>
                 <p style="text-align:left">
-                    The Polynomial Kernel function (Refer Fig. 56) computes a dot product between the input vectors in the original feature space and raises the sum by the specified degree d. The constant c allows for shifting the polynomial. On the other hand, the Radial Basis Function (RBF) Kernel (Refer Fig. 56) measures the similarity between vectors based on the Euclidean distance.
+                    The Polynomial Kernel function (Refer Fig. 56) computes a dot product between the input vectors in the original feature space and raises the sum by the specified degree d. The constant c allows for shifting the polynomial. On the other hand, the Radial Basis Function (RBF) Kernel (Refer Fig. 56) measures the similarity between vectors based on the Euclidean distance. An example is presented in Fig. 56 to illustrate the casting of 2D points into 6D points using a polynomial kernel.
                 </p>
-                <img src="images/SVM/Image_4.png" alt="intro_1">
-                <p style="text-align:center">Polynomial Kernel formula (Fig. 56)</p style="text-align:center">
 
             </div>
-            <div style="text-align: center;">
-                <img src="images/SVM/Image_3.png" alt="intro_1">
-                <p style="text-align:center">SVM classifier on various kernels (Fig. 55)</p>
+            <div>
+                <img src="images/SVM/Image_16.png" alt="intro_1" style="width: 50%;">
+                <p style="text-align:right">Kernels and Example (Fig. 56)</p>
             </div>
             </div>
             <div class="row about-content">
