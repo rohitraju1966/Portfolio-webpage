@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SemanticCodeEvaluator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+        /* General Body Styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Background Overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Center Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 750px;
+            width: 90%;
+        }
+
+        /* Code-like Title */
+        .code-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 2.2rem;
+            background: #000;
+            color: #00ff00;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+        }
+
+        /* Black Text Styling */
+        .black-text {
+            color: black; /* Ensures the text is black */
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Input Areas */
+        .option {
+            margin: 20px 0;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            resize: none;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* "OR" Divider */
+        .divider {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* File Upload Styling */
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745; /* Green for differentiation */
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .file-upload label:hover {
+            background-color: #218838;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #333;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            color: white;
+            background: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop class="background-video">
+        <source src="wallpaper.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1 class="code-title">SemanticCodeEvaluator()</h1>
+        
+        <!-- Add black text here -->
+        <p class="black-text">Welcome to the Semantic Code Evaluator. To evaluate a piece of C code, you can either enter the code directly below or upload a file containing a column labeled 'Code', followed by the set of C codes.</p>
+
+        <div class="input-text option">
+            <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
+        </div>
+        <div class="divider">OR</div>
+        <div class="file-upload option">
+            <input type="file" id="fileInput" onchange="showFileName()">
+            <label for="fileInput">Choose File</label>
+            <div id="fileName" class="file-name">No file selected</div>
+        </div>
+        <button onclick="handleSubmit()">Submit</button>
+    </div>
+
+    <script>
+        // JavaScript to display file name
+        function showFileName() {
+            const fileInput = document.getElementById('fileInput');
+            const fileNameDisplay = document.getElementById('fileName');
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+            } else {
+                fileNameDisplay.textContent = 'No file selected';
+            }
+        }
+
+        // JavaScript to handle the submission
+        function handleSubmit() {
+            const codeInput = document.getElementById('codeInput').value;
+            const fileInput = document.getElementById('fileInput').files[0];
+            
+            if (codeInput) {
+                alert(`Code submitted:\n${codeInput}`);
+            } else if (fileInput) {
+                alert(`File submitted: ${fileInput.name}`);
+            } else {
+                alert('Please enter code or select a file before submitting.');
+            }
+        }
+    </script>
+</body>
+</html>
