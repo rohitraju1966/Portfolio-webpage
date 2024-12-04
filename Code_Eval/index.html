@@ -191,13 +191,34 @@
             const codeInput = document.getElementById('codeInput').value;
             const fileInput = document.getElementById('fileInput').files[0];
             
+            const formData = new FormData();
             if (codeInput) {
-                alert(`Code submitted:\n${codeInput}`);
-            } else if (fileInput) {
-                alert(`File submitted: ${fileInput.name}`);
-            } else {
-                alert('Please enter code or select a file before submitting.');
+                formData.append('code', codeInput); // appending code input
+            } 
+            if (fileInput) {
+                formData.append('file', fileInput); // appending file
             }
+
+            // If both inputs are empty, show an error
+            if (!codeInput && !fileInput) {
+                alert('Please enter code or select a file before submitting.');
+                return;
+            }
+
+            // Sending the form data to the backend
+            fetch('https://rohitraju.com/submit', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response from server:', data);
+                alert('Submission successful!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error with the submission.');
+            });
         }
     </script>
 </body>
