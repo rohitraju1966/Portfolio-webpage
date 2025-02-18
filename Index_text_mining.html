@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title> Unmasking AI | Works</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/frost.png" alt="Homepage" width="300"></a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li class="current"><a class="smoothscroll"  href="#Introduction" title="Introduction">Introduction</a></li>
+                <li><a class="smoothscroll"  href="#DataPrep_EDA" title="DataPrep_ED">DataPrep & EDA</a></li>
+            </ul>
+        </nav>
+
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/textmining/BG_image.png" data-natural-width="1600" data-natural-height="900" data-position-y="center">
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+    
+        <div class="home-content">
+            <div class="row home-content__main" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+                <h1 style="color: white; font-size: 3rem;">Unmasking AI: The Tug-of-War Between Bias and Fairness</h1>
+                <div class="home-content__scroll">
+                    <a href="#Introduction" class="scroll-link smoothscroll">
+                        <span>Scroll Down</span>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- end home-content -->
+    
+    </section> <!-- end s-home -->
+    
+
+    <!-- about
+    ================================================== -->
+    <section id="Introduction" class="s-about target-section">
+        <div class="row">
+            <div class="row narrow section-intro has-bottom-sep">
+                <div class="col-full">
+                    <h3>INTRODUCTION</h3>
+                </div>
+            </div>
+            <div class="col-full">
+                <img src="images/textmining/intro_pic.png" alt="AI Bias and Fairness" width="100%">
+                <p>
+                    The rapid advancement of Artificial Intelligence (AI) has led to a huge transformation in the form of automation applications in industry. These automations are powered by tools capable of understanding natural language. The latest AI advancements now assist industry professionals by acting as agents to help with everyday activities. They are used for various purposes, such as predicting future sales, spotting fraud, tailoring ads to people, improving delivery processes, answering customer questions automatically, checking product quality, and understanding customer opinions. AI is also employed in other industries, such as education, to assist students and teachers with tasks like collaborative learning, personalized education, and tailoring curricula for students. As AI continues to evolve, its potential for enhancing productivity and efficiency across all sectors grows. Its ability to analyze vast amounts of data also enables smarter decision-making and problem-solving. In the future, AI is expected to play an even more significant role in shaping industries and driving innovation across various fields.
+                </p>
+                <p>
+                    While there has been much discussion about AI’s power to drive change, there are also growing concerns about its safe use in industry and the biases that must be addressed to prevent unfair applications. Ensuring fairness in AI is crucial, as biased algorithms can reinforce existing inequalities and lead to unjust treatment of individuals. Bias often arises from imbalanced training data, human biases in decision-making, or flawed model assumptions. This can have serious consequences in areas such as hiring, lending, healthcare, and law enforcement, where AI-driven decisions directly impact people’s lives. For example, biased hiring algorithms may favor certain demographics, while predictive policing tools can disproportionately target specific communities. To address these concerns, researchers and organizations are developing fairness-aware AI models that detect and mitigate bias during training. Governments and regulatory bodies are implementing policies to ensure AI systems are transparent, accountable, and ethical. Companies are adopting fairness audits, bias mitigation techniques, and diverse datasets to improve AI reliability. Open-source tools for bias detection, such as fairness libraries, are being integrated into AI development pipelines. Despite these efforts, achieving true fairness remains a challenge, requiring continuous monitoring, interdisciplinary collaboration, and public awareness. As AI continues to shape society, prioritizing fairness will be essential to building trust and ensuring technology benefits everyone equally.
+                </p>
+                <h3>Research Questions</h3>
+                <ul>
+                    <li>What types of bias (gender, racial, political) appear in online discussions about AI?</li>
+                    <li>How does sentiment toward AI fairness differ across various queries in the dataset?</li>
+                    <li>Are specific words or phrases linked more often to certain demographic groups in discussions about AI bias?</li>
+                    <li>Do users express different levels of frustration or trust in AI systems depending on the topic (fairness vs. discrimination)?</li>
+                    <li>How often do discussions about AI bias reference real-world consequences (hiring, policing, education)?</li>
+                    <li>Do AI-generated news articles and user-generated discussions show different perspectives on AI fairness?</li>
+                    <li>Which AI-related topics (facial recognition, hiring algorithms, moderation tools) are most commonly discussed in relation to bias?</li>
+                    <li>Are certain AI companies or models mentioned more frequently in bias-related discussions, and in what context?</li>
+                    <li>How do discussions about AI fairness evolve over time—are certain concerns becoming more prominent?</li>
+                    <li>Do different subgroups of users (technical vs. non-technical) discuss AI bias and fairness differently?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="DataPrep_EDA" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>DATA PREPARATION & EDA</h3>
+            </div>
+         </div>
+
+        </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+
+                <p>The dataset was collected from multiple sources through a structured scraping process. First, an API request was made to Reddit to extract discussions related to AI bias, AI discrimination, fairness in AI, and AI ethics. The request targeted posts and comments from relevant Reddit pages where users actively discuss concerns about bias and fairness in AI systems. The extracted data was stored along with its respective labels, ensuring that each entry was categorized based on its thematic relevance.</p>
+                <p>Next, a second API request was sent to NewsAPI to gather news articles covering the same topics. The goal was to capture perspectives from journalistic sources and compare them with user discussions from Reddit. Each article was stored alongside its metadata, including its label, title, description, and full content when available. By combining news and user-generated content, the dataset provides a diverse view of how AI bias and fairness are perceived across different platforms.
+                </p>
+                <p> To further enrich the dataset, additional data was scraped from a web page using BeautifulSoup. This process involved extracting relevant text, filtering out unnecessary HTML elements, and structuring the extracted rows to align with the previously collected data. The newly obtained entries were then appended to the dataset, ensuring consistency in format and labeling.
+                </p>
+                <p> After data collection, an extensive data cleaning process was carried out to refine the text for analysis. All URLs, special characters, and irrelevant symbols were removed to retain only meaningful textual content. The text was converted to lowercase for uniformity, and stop words were filtered out to focus on significant terms. A sample raw data and its cleaned form is presented in fig. 1 and fig. 2 .To standardize word forms, both stemming (refer to fig. 3) and lemmatization (refer to fig. 4) were applied, reducing words to their root forms while preserving their contextual meaning. Query column in the figures represent the labels of the dataframe. 
+                </p>
+                <img src="images/textmining/tfidf_data.png" alt="intro_1">
+                <span>Fig. 5 TF-IDF Vectorized Data</span>
+                <img src="images/textmining/Count_vectorized.png" alt="intro_1">
+                <span>Fig. 6 Count Vectorized Data</span>
+                
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/textmining/Before_cleaning.png" alt="intro_1">
+                <span>Fig. 1 Sample Data before Cleaning</span>
+                <img src="images/textmining/After_cleaning.png" alt="intro_1">
+                <span>Fig. 2 Sample Data after Cleaning</span>
+                <img src="images/textmining/Stemmed_data.png" alt="intro_1">
+                <span>Fig. 3 Stemmed Data</span>
+                <img src="images/textmining/Lemetized_data.png" alt="intro_1">
+                <span>Fig. 4 Lemmatized Data</span> 
+                
+            
+            </div>
+        </div>
+        <div class="row">
+            <p> Finally, the cleaned dataset was transformed into a structured format suitable for analysis. CountVectorizer (refer to fig. 5) and TF-IDF vectorization (refer to fig. 6) were applied to convert textual data into numerical representations, enabling further exploration of word frequencies and their significance in discussions about AI bias and fairness.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-six tab-full left">
+             <h3>Exploratory Data Analysis</h3>
+             <p>
+                On the cleaned dataset, an Exploratory Data Analysis (EDA) was conducted to uncover key patterns in discussions surrounding AI bias, discrimination, fairness, and ethics. The analysis involved generating TF-IDF bar charts to highlight the most impactful words for each query, as well as word clouds to visualize frequently occurring terms in user discussions and news articles.
+             </p>              
+            <p>
+                    The TF-IDF bar charts provided insight into the most significant terms associated with each query, revealing trends in how AI-related bias and fairness are discussed. For instance, words like "bias," "data," and "people" had high importance in AI bias discussions (refer to fig. 7 and fig. 8), while terms like "ethical," "intelligence," and "artificial" were prominent in conversations around ethical AI. Similarly, AI fairness discussions frequently emphasized "people," "think," and "make," reflecting concerns over decision-making processes in AI systems (refer to fig. 9 and fig. 10). 
+            </p>
+            <img src="images/textmining/AI_Ethics_WC.png" alt="intro_1">
+            <span>Fig. 10 Word Cloud representing words from 'AI Ethics' data</span>
+            <p>
+            <p>The word clouds further illustrated the diversity of discussions by capturing the most frequently used words across different themes. The presence of terms like "human," "system," and "work" in AI bias conversations suggests an ongoing debate on how AI systems interact with humans and their perceived fairness (refer to fig. 10). In AI ethics discussions, words such as "think," "use," and "need" highlight the importance of decision-making and ethical considerations in AI deployment (refer to fig. 9).
+            </p>
+            </p>
+            <img src="images/textmining/AI_bias_tfidf.png" alt="intro_1">
+            <span>Fig. 12 Word Cloud representing TF-IDF from 'AI Bias' data</span>
+            <p style="justify-content: center;">
+                <p> The TF-IDF results from the different AI-related themes reveal distinct patterns in word importance across various discussions. In Fig. 11, terms such as discrimination, artificial, and intelligence highlight key concerns in AI discrimination debates, with people and just being among the most impactful words, emphasizing fairness-related discourse. Similarly, Fig. 12 on AI bias features words like human, biased, and data, indicating discussions centered around human involvement in AI fairness and systemic biases. Fig. 13 on AI fairness interestingly includes words in French (dans, mais, pour), suggesting potential multilingual influences in the dataset. Lastly, Fig. 14, which focuses on AI ethics, contains prominent words such as ethics, artificial, and intelligence, reinforcing the significance of ethical considerations in AI systems. These results collectively illustrate the nuanced discussions within AI bias, fairness, discrimination, and ethics, with a strong emphasis on human impact, fairness principles, and ethical AI deployment.</p>
+            </p>
+            
+
+            </div>
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/textmining/AI_Bias_WC.png" alt="intro_1">
+                <span>Fig. 7 Word Cloud representing words from 'bias' data</span>
+                <img src="images/textmining/AI_Desc_WC.png" alt="intro_1">
+                <span>Fig. 8 Word Cloud representing words from 'AI Discrimination' data</span>
+                <img src="images/textmining/AI_fairness_WC.png" alt="intro_1">
+                <span>Fig. 9 Word Cloud representing words from 'AI Fairness' data</span>
+                <img src="images/textmining/AI_desc_tfidf.png" alt="intro_1">
+                <span>Fig. 11 Word Cloud representing TF-IDF from 'AI Discrimination' data</span>
+                <img src="images/textmining/AI_fairness_tfidf.png" alt="intro_1">
+                <span>Fig. 13 Word Cloud representing TF-IDF from 'AI Ethics' data</span>
+                <img src="images/textmining/AI_ethical_tfidf.png" alt="intro_1">
+                <span>Fig. 14 Word Cloud representing TF-IDF from 'AI Ethics' data</span>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Overall, these visualizations provided a comprehensive overview of the dataset, helping to identify key themes, prevalent concerns, and linguistic patterns in AI-related discussions across various sources.
+            </p>
+            <p>
+                The link to the code and the data generated after cleaning can be found <a href="https://drive.google.com/drive/folders/1cTTiRxxd93waMOuB2LCg56cvMut0GTFF?usp=sharing">here.</a>
+            </p>
+        </div>
+        
+       
+    </section>   
+
+    <!-- clustering
+    ================================================== 
+    <section id="Clustering" class="s-about target-section">
+        <div class="row">
+         <div class="row narrow section-intro has-bottom-sep">
+             <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>K-means & Hierarchical clustering </h1>
+             </div>
+         </div>
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    From prior research, the relationship between title length and views suggests that title length does play a role in influencing the number of views a video gains. Though the relation is not directly causal, it could be said that title length does influence views. To confirm this hypothesis, k-means clustering is performed on the data. K-means clustering is a form of unsupervised learning which helps in deriving the clusters of data that are related to one another by using a distance metric. The distance metric used for this method is the Euclidean distance. Euclidean distance takes into consideration the shortest distance between data points and thus helps in finding the closest points. The formula is provided in Fig. 14. K-means clustering is a form of partition clustering which is an algorithm that divides the dataset into sub categories based on certain criteria such as the shortest distance between the clusters and the centroid. 
+                </p>
+
+                <p> 
+                    To advance the analysis, titles undergo embedding using a VGG16 network (see Fig. 15) to extract key features from the text. The VGG16 network, commonly utilized for image recognition, is repurposed for text analysis. The title embeddings are then subjected to hierarchical clustering to identify the closest titles. Notably, the 'views' variable is not utilized in this method. Hierarchical clustering offers advantages over k-means clustering, as it does not require a fixed number of clusters to be specified, allowing for the natural structure of the data to emerge. The approach employs divisive clustering, where each data point initially forms a single cluster and subsequently divides into smaller clusters. The distance metric utilized for this method is cosine similarity, chosen for its effectiveness in measuring the similarity between embedding vectors (see formula in Fig 16).
+                </p>
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Euclidean_distance.jpeg" alt="intro_1">
+                <span>Fig. 14 Euclidean Distance Formula</span>
+                <img src="images/VGG16_architecture.jpeg" alt="intro_1">
+                <span>Fig. 15 VGG16 Architecture</span>
+                <img src="images/Consine_similarity.webp" alt="intro_1">
+                <span>Fig. 16 Cosine Similarity formula</span>
+
+        
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>
+                    To determine the influence of title length on views, the 'title_length' feature is derived by counting the number of characters in the title, while the 'views/elapsed time' ratio is considered instead of views to focus on the impact of titles relative to the time since publication. The 'views/elapsedtime' column is analyzed for outliers and subsequently removed to ensure accurate clustering. Thus, for k-means clustering, a subset of the dataset containing the 'title_length' and 'views/elapsedtime' features is used (refer Fig.17). Title embeddings are obtained by first passing the titles through a pre-trained VGG16 network with its fully connected layer removed to extract key features. The resulting features are then stored in the 'title_embedding' column. These title embeddings, along with the 'views/elapsedtime' features, are used for hierarchical clustering. Although 'views/elapsedtime' is not directly used in the clustering algorithm, it is utilized post-clustering as labels to analyze the pattern that emerges from the data. The link to the sample data can be found <a href="https://docs.google.com/spreadsheets/d/1w5Jh762GTnXEW7tQVfF4yfvjZyyU_YwRO9znSFmVTco/edit?usp=sharing" target="_blank">here</a>.
+                </p>
+            </div>
+    
+         <div class="col-six tab-full left" style="text-align:center">
+            <p> 
+            <img src="images/K-means_data.png" alt="intro_1">
+            <span>Fig. 17 Clustering Data</span>
+            </p>
+         </div>
+         <div class="col-six tab-full right" style="text-align:center">
+            <img src="images/Original_data.png" alt="intro_1">
+            <span>Fig. 18 Sample of original data</span>
+         </div>
+        </div>
+         <div class="row">
+            <div>
+                <h3>Code: </h3>
+                <p>
+                    The code to k-means clustering performed on python can be found <a href="https://colab.research.google.com/drive/1rWfW7_M6ySAT7oVtVBTT0THWUQ83A_Yu?usp=sharing" target="_blank">here</a>,
+                     and the code to hierarchical clusterinf can be found <a href="https://drive.google.com/drive/folders/13dHH_yHOReKT8-NCsJOfpfMspdSEzmzm?usp=sharing" target="_blank">here</a>
+                </p>
+            </div>
+         </div>
+
+        <div class="row">
+            <div class="col-six tab-full left">
+             <h3>Results</h3>
+             <p>
+                <h5>The k-means clustering experiment generated the following results:</h5>
+                The experiment was run on K-values ranging from 2 to 10 and the results were recorded as shown in Fig.19 and Fig. 20. K values greater than 3 generated less than 1 inertia and and gave a silhouette score less than 0.53, hence, both the silhouette score and the elbow method indicated that k=2 was the optimal value for the clustering algorithm (refer Fig. 20 and Fig. 19). The silhouette score for k=2 was obtained as 0.57, suggesting that the majority of the points belong within the clusters with a minor overlap between them. K-means clustering was conducted on 'title_length' and 'views/elapsedtime' ratio with k=2, using a boundary of title length=50 to obtain distinct clusters. The clusters were centered at (30.18, 0.40) and (62.45, 0.50), indicating a significant relationship between YouTube title length and views (refer Fig. 21).
+                <div style="text-align:center"><img src="images/k_means_clusters.png" alt="intro_1" style="text-align:center"><span>Fig. 21 K-means clustering perfomed for 2 clusters</span></div>
+                
+             </p>              
+             <p>
+                <h5>The hierarchical clustering experiment generated the following results: </h5>
+                <p>Three clusters were obtained while clustering the title embeddings. The first cluster primarily included titles resulting in low 'views/elapsedtime' ratios. The second cluster comprised titles with predominantly high 'views/elapsedtime' ratios. The third cluster yielded mixed results, with a combination of low and high 'views/elapsedtime' ratios.
+                </p>
+                <p>
+                    Comparing Hierarchical and K-means clustering, it can be observed that there exist two clusters (though hierarchical provided three clusters the third one can be ignored as it does not capture the video performance based on views) and the video titles fall into each of these clusters based on its characteristics.
+
+                 
+                </p>
+             </p>  
+             
+
+            </div>
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/elbow_method.png" alt="intro_1">
+                <span>Fig. 19 Elbow method to find optimal K value</span>
+                <img src="images/silhouette_score.png" alt="intro_1">
+                <span>Fig. 20 Silhoutte method to find optimal K-value</span>
+        
+            </div>
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Dendogram.png" alt="intro_1">
+                <span>Fig. 22 Dendogram with hclust performed on title embeddings</span>
+        
+            </div>
+        </div>
+        <div class="row">
+            <h3>Conclusion</h3>
+            <p>
+                Based on the results, it is observed that titles with more than 50 characters had a mean 'views/elapsedtime' of 0.5 and a mean title length of 62 characters. In contrast, titles with fewer than 50 characters displayed a mean 'views/elapsedtime' of 0.4 and a mean title length of 30 characters. This suggests that videos with shorter titles performed relatively poorly compared to videos with longer titles. It is worth noting that the boundary lies at 50 characters, and given that the maximum length of a YouTube title is 100 characters, the clusters clearly differentiate shorter titles from longer titles.
+            </p>
+            <p>
+                The hierarchical clustering revealed three clusters based on title embeddings, each exhibiting varying views-to-elapsed-time ratios. The first cluster displayed a lower mean views-to-elapsed-time ratio, while the second cluster exhibited a higher mean ratio. The third cluster presented a mixture of views-to-elapsed-time ratios. This suggests that titles within the second cluster corresponded to videos with better performance compared to those in the other two clusters.
+
+            </p>
+            <p>
+               <b> In conclusion, the results of the cluster experiment indicate that titles indeed have an impact on YouTube video performance. </b> 
+
+            </p>
+        </div>
+
+    </section>
+    <section id="ARM" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>Association Rule Mining</h1>
+                
+            </div>
+         </div>
+    
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p>The conclusions drawn from clustering experiments on video titles and their impact on views suggest that titles indeed play a significant role in video performance. To deepen the analysis, association rule mining (ARM) is employed to study the relationship between title characteristics and various metrics of YouTube video performance. ARM is a method of discovering rules within data to unveil underlying relationships. These rules typically follow an 'if-then' structure, with variables on the left-hand side (LHS) as antecedents and those on the right-hand side (RHS) as consequent (refer Fig. 23)
+                </p>
+                <p>
+                    In ARM analysis, key metrics such as support, confidence, and lift are extremely important. Support indicates the proportion of the dataset containing both the LHS and RHS of a rule, while confidence represents the conditional probability of the consequent given the antecedent. Lift measures the degree of association between the antecedent and consequent, with values greater than 1 indicating a stronger relationship than would be expected by chance.
+                </p>
+                <p>
+                    The Apriori algorithm is used for association rule learning. It is specifically designed to discover frequent item sets in transactional databases and to generate association rules based on these frequent item sets.
+                </p>
+                <p>
+                    This study employs apriori algorithm to investigate the relationship between title length and various metrics of video performance, including views, subscribers gained, comments received, and likes garnered. By analyzing these associations, the research aims to uncover insights into how title characteristics influence video performance outcomes.
+
+                </p>
+               
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/Antecedent_cons.png" alt="intro_1">
+                <span>Relationship between antecedent and consequent (Fig. 23)</span>
+                <img src="images/AprioriSteps.png" alt="intro_1">
+                <span>Apriori Algorithm (Fig. 24)</span>
+            
+            </div>
+        </div>
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Data prep</h3>
+                <p>
+                    To prepare the data for analysis using the Apriori algorithm, it first needs to be converted into transaction data. The original data, which is in the form of Record data (refer Fig. 25), undergoes a transformation process to create transactional records suitable for association rule mining.
+                </p>
+                <p>
+                    The transformation begins by binning the columns into categories based on an analysis of the data distribution. Each column is processed individually, with the goal of maximizing variability while maintaining equal distribution within each category. For instance, the 'title length' column is divided into 'short title' and 'long title', while the 'views/elapsed time' ratio is categorized as 'performed poorly', 'performed well', and 'performed great'.Other columns are binned as 'relatively more' or 'relatively less' compared to the median of the data. This binning process ensures that each transaction captures relevant information while reducing complexity (refer Fig. 26 for final sample dataset)
+                </p>
+                <p>
+                    In total, approximately 125,000 transactions are generated from the original data. A sample of the final transaction data is provided <a href="https://docs.google.com/spreadsheets/d/1ZjHlWa-cRtj4xNK8GRM2QOq6D--tJRH4wNCGz4Tly4g/edit?usp=sharing" target="_blank">here</a>.
+                </p>
+    
+            </div>
+        <div class="col-six tab-full right">
+            <img src="images/Original_data.png" alt="intro_1">
+            <p style="text-align:center">Fig.25 Sample of Original Cleaned Data</p style="text-align:center">
+            <img src="images/ARM_data.png" alt="intro_1">
+            <p style="text-align:center">Fig.26 ARM data</p style="text-align:center">
+        </div>
+    </div>
+        </div>
+        <div class="row about-content">
+        <p> 
+            <h3>Code</h3>
+            The apriori algorithm is run on ‘R’ programming language to derive the rules from the dataset. The code can be found <a href="https://drive.google.com/drive/folders/13dHH_yHOReKT8-NCsJOfpfMspdSEzmzm?usp=drive_link" target="_blank">here</a>. 
+        </p>
+        </div>
+        <div class="row about-content">
+                <h3>Results</h3>
+                <p>
+                    The apriori algorithm was run on the dataset to obtain top 15 rules with a fixed RHS of ‘shorter titles’ for support, confidence and lift with a minimum support of 10% and a minimum confidence of 50%. ‘Short titles’ were picked to be fixed as the RHS as it helps in exploring all the patterns that exist around short titles and its impact on the performance of the videos. 
+                    The rules obtained are as follows:
+                                    
+                </p>
+                <h5>Support</h5>
+                <p>
+                    <img src="images/Support.png" alt="intro_1">
+                    <p style="text-align:center">Fig.27 Support Data</p style="text-align:center">
+                    <img src="images/top_15_support.png" alt="intro_1">
+                    <p style="text-align:center">Fig.28 Support rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The top rules based on the support metric indicate that videos with shorter titles tend to perform poorly in terms of the number of subscribers, likes, and views they accumulate over time. This observation, with a support of 35%, is significant within the dataset, suggesting a substantial association between shorter titles and lower performance metrics.
+                </p>
+                <h5>Confidence</h5>
+                <p>
+                    <img src="images/Confidence.png" alt="intro_1">
+                    <p style="text-align:center">Fig.29 Confidence Data</p style="text-align:center">
+                    <img src="images/top_15_confidence.png" alt="intro_1">
+                    <p style="text-align:center">Fig.30 Confidence rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The top 15 rules obtained from confidence suggest that similar findings of support, the confidence of the rules signifies that with an average confidence of 75% it could be said that if the video performs poorly, on an average, 75% of the times it consists of a shorter title. 
+                </p>
+                <h5>Lift</h5>
+                <p>
+                    <img src="images/Lift.png" alt="intro_1">
+                    <p style="text-align:center">Fig.31 Lift Data</p style="text-align:center">
+                    <img src="images/top_15_lift.png" alt="intro_1">
+                    <p style="text-align:center">Fig.32 Lift rules Visualization</p style="text-align:center">
+                </p>
+                <p>
+                    The higher lift value for the rules also suggests a very strong relationship between the antecedent and the consequent, beyond what could be expected by chance. 
+                </p>
+                
+        </div>
+        <div class="row about-content">
+            <h3>Conclusion</h3>
+            <p>
+                From the rules derived through the Apriori algorithm, a strong association emerges between <b> poor video performance and short titles </b>. Notably, an average support score of 30%, confidence level of 70%, and lift value exceeding 1 were observed for rules where poor performance metrics served as the antecedent and shorter titles as the consequent.
+            </p>
+            <p>
+                <b>The high support, confidence, and lift values confirm that titles indeed impact video views. While the precise magnitude of this impact remains unquantified, the evident relationship between titles and video performance, as revealed by both association rule mining and clustering analyses, cannot be overlooked. 
+                </b>
+            </p>
+
+        </div>
+    </section>   
+    <section id="NaiveBayes" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML modeling</h3>
+                <h1>Naive Bayes Classifier</h1>
+                
+            </div>
+         </div>
+    
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p>
+                    The main principle behind the Multinomial Naive Bayes algorithm is based on Bayes’ theorem (refer Fig. 33), which assists Multinomial Naive Bayes classifiers in determining the probability of a given set of features belonging to a set of classes. Multinomial Naive Bayes is used in scenarios where the data are presented in a categorical format. During training, the model learns the probability of each feature occurring in a given class. This allows it to develop a probabilistic understanding of the dataset. The probabilities calculated during training are then used during testing. This enables the model to predict the likelihood of a given set of unseen feature values and select the class with the highest probability. The Naive Bayes algorithm as a whole assumes independence between features, which is why it earned the name 'naive' Bayes. In this particular project, the Naive Bayes model is used to predict the performance categories such as 'Performed Poorly' or 'Performed Well' based on the given YouTube titles.
+                </p> 
+                <p>
+                
+                 Bernoulli Naive Bayes is another variant of the Naive Bayes algorithm specifically designed to handle binary data. It measures the presence or absence of a particular attribute in a dataset. Bernoulli Naive Bayes also makes the assumption that features are independent of one another. This means that the presence or absence of one feature does not affect the presence or absence of another feature. During training, Bernoulli Naive Bayes calculates the probability of each feature occurring or not occurring in each class. It does this by counting the number of occurrences of each feature in each class and dividing by the total number of documents in that class (refer Fig. 34).
+                    
+                </p>
+            </div>
+
+            <div class="col-six tab-full right" style="text-align:center">
+                <img src="images/DT_NB/MNB_formula.png" alt="intro_1">
+                <span>Multinomial Naive Bayes formula (Fig. 33)</span>
+                <img src="images/DT_NB/BNB_formula.png" alt="intro_1">
+                <span>Bernoulli Naive Bayes formula (Fig. 34 )</span>
+                <img src="images/DT_NB/Laplace_Formula.png" alt="intro_1">
+                <span>Laplacian Smoothing Formula (Fig. 35)</span>
+                <h5>Importance of smoothing in Naive Bayes</h5>
+                <p style="text-align:left">
+                    Smoothing is a process aimed at preventing occurrences of zero probabilities when testing datasets. During testing, there may be instances where a particular feature has no occurrence in the training dataset, while other features may occur simultaneously. This situation would erroneously result in a zero probability for the entire test dataset, despite the chances of occurrence not being truly zero. To address this issue, various smoothing techniques such as Laplace smoothing (add-one smoothing), Lidstone smoothing, or Dirichlet smoothing are employed. By utilizing smoothing methods like Laplace smoothing, we ensure that neither the numerator nor the denominator in probability calculations becomes zero. Fig. 35 provides the formula for the most commonly used Laplace smoothing method.
+                </p>
+            
+            </div>
+        </div>
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Data preparation</h3>
+                <p>
+                    The data preparation stage of Naive Bayes was conducted in three steps,
+                    <li>
+                        The quantitative feature ‘views/elapsedtime’ from the cleaned dataset (Refer Fig. 36) was transformed into a qualitative feature by categorizing all values less than 0.1 as "Performed Poorly" and those greater than 0.1 as "Performed Well" (Refer Fig. 37). The value 0.1 was chosen as the cutoff point as it represents the 50th percentile of the column. 
+                    </li>
+                    <li>
+                        The 'titles' column underwent transformation using the TF-IDF function to represent the text in a format suitable for input into the Naive Bayes algorithm. Term Frequency Inverse Document Frequency (TF-IDF) is an algorithm that assigns numerical values to each word in a sentence based on its importance within the 'titles' column. This method aids in representing the text meaningfully. (Refer Fig. 38)
+                    </li>
+                    <li>
+                        The two transformed columns, 'views/elapsedtime' and 'titles', were subsequently extracted to form a separate data frame. This data frame was then divided into training (Refer Fig. 37 and Fig. 38) and testing sets (Refer Fig. 39). The data was partitioned into disjoint chunks for the two categories to enable training on one set of data and testing on unseen data. This approach assists in identifying potential overfitting during training, thereby aiding in the analysis of the model's capabilities. Sample test and Training Data can be found <a href="https://drive.google.com/drive/folders/1wCLZnrjDjBWjYv5P0u4Frp6p9fvqbK0d?usp=sharing" target="_blank">here</a>
+                    </li>
+                </p>
+                <img src="images/DT_NB/Sample_X_test_NB.png" alt="intro_1">
+                <p style="text-align:center">Fig.39 Test data sample</p style="text-align:center">
+                <h3>Code</h3>
+                <p>The code to Naive Bayes’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1xa4Eeqxb6zmgTlQc0NeD25Z9GFJx6xu-?usp=sharing" target="_blank">here</a>. </p>
+                <img src="images/DT_NB/Accuracy_NB_1.png" alt="intro_1">
+                <p style="text-align:center">Fig.40 Model Evaluation Metric</p style="text-align:center">
+                <img src="images/DT_NB/Accuracy_NB_2.png" alt="intro_1">
+                <p style="text-align:center">Fig.41 Model Evaluation Metric</p style="text-align:center">
+            </div>
+            <div class="col-six tab-full right">
+             <img src="images/Original_data.png" alt="intro_1">
+             <p style="text-align:center">Fig.36 Sample of Original Data</p style="text-align:center">
+             <img src="images/DT_NB/Sample_X_train_NB.png" alt="intro_1">
+             <p style="text-align:center">Fig.37 Training data sample</p style="text-align:center">
+             <img src="images/DT_NB/Sample_Y_train_NB.png" alt="intro_1">
+             <p style="text-align:center">Fig.38 Training data sample</p style="text-align:center">
+            </div>
+    
+          <div class="col-six tab-full right">
+              <h3>Results</h3>
+              <p>
+                The Multinomial Naive Bayes model was trained on the training dataset with the alpha parameter set to 0.2 for implementing Laplace smoothing. The results were obtained by running the model on the test dataset, as shown in Figure 40. It is evident from the results that both the accuracy and precision of the model were approximately 58% for both labels. However, the recall varied slightly, with the 'Performed Poorly' label scoring 53% and the 'Performed Well' label scoring 64%. Additionally, the average accuracy, precision, recall, and F1 score for the model were approximately 58%, as depicted in Figure 41.
+              </p>
+              <p>
+                Furthermore, analyzing the confusion matrix (Figure 42), it is evident that both labels exhibit an equal distribution throughout the matrix, indicating that the model has successfully learned both features equally.
+              </p>
+              <p>
+                <img src="images/DT_NB/Confusion_Matrix_Naive_Baiyes_Before_smoothing.png" alt="intro_1">
+                <p style="text-align:center">Fig.42 Naive Bayes Confusion Matrix</p style="text-align:center">
+              </p>
+          </div>
+        </div>
+    <div class="row about-content">
+            <h3>Conclusion</h3>
+            <p>
+                The results suggest that while the model wasn't able to capture all the patterns between the 'titles' feature and the 'views/elapsedtime' feature from the dataset, it did demonstrate the existence of some patterns. With accuracy, precision, and recall hovering around 58%, the model performed better than random guessing. However, it falls short of being able to make meaningful predictions due to inadequate training on the dataset.
+            </p>
+            <p>
+                <b>These outcomes align with expectations for Naive Bayes classifiers, which are basic probabilistic classifiers lacking the advanced capability to discern complex patterns present in text documents. While unsupervised learning algorithms and Naive Bayes have indicated a relationship between YouTube titles and their corresponding views, more sophisticated algorithms such as CNN or LSTM could better capture and learn intricate patterns from the dataset. These advanced models are adept at handling sequential data like text and could potentially yield more accurate predictions by extracting deeper insights from the 'titles' feature in relation to 'views/elapsedtime'.
+                </b>
+            </p>
+
+    </div>
+    </section>   
+    <section id="DecTrees" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Decision Trees.</h1>
+                
+            </div>
+         </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Decision trees (refer Figure 43) are supervised machine learning algorithms, suitable for both classification and regression tasks. The algorithm operates by partitioning the dataset's features into smaller sets with the help of input features, aiming to predict the output feature. The model trains itself by adjusting the decision of splits at each node, aiming to find the best split using either the Gini Index or Information Gain. 
+                </p>
+                <p>
+                    <h5>What is Gini Index?</h5>
+                    Gini index is a measure of the impurity present in the dataset, also referred to as entropy. In the context of decision trees, it calculates how often a randomly chosen element from the set would be incorrectly classified if it were randomly labeled according to the distribution of labels in the subset. The formula for the same is given in Fig. 44. 
+                </p>
+                <h5 style="text-align:left">What is Entropy ?</h5>
+                <p style="text-align:left">
+                    Entropy measures the amount of disorder or uncertainty in the dataset, the formula is provided in Figure 45. It is commonly used in making decisions at nodes in the decision trees. Entropy minimization is the aim while making decisions on a decision tree. Maximum entropy would mean that the classes are evenly distributed and consist of maximum disorder.
+                </p>
+                <img src="images/DT_NB/Entropy_formula.png" alt="intro_1">
+                <p style="text-align:center">Entropy formula (Fig. 45)</p style="text-align:center">
+                <img src="images/DT_NB/Information_gain.png" alt="intro_1">
+                <p style="text-align:center">Information Gain formula (Fig. 46)</p style="text-align:center">
+               
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/DT_NB/DT_image.png" alt="intro_1">
+                <p style="text-align:center">Decision Tree Example (Fig. 43)</p style="text-align:center">
+                <img src="images/DT_NB/Gini_formula.png" alt="intro_1">
+                <p style="text-align:center">Gini Index formula (Fig. 44)</p style="text-align:center">
+                <h5 style="text-align:left">What is Information Gain ?</h5>
+                <p style="text-align:left">
+                    Information Gain quantifies the amount of information or pattern a particular subset of data would capture if it's split at that particular node, which measures the reduction in entropy achieved by a split. Entropy (refer Figure 45) measures the amount of disorder or uncertainty in the dataset. The main aim of the method is to reduce the uncertainty such that the model is able to learn patterns in the dataset. Higher the information gain the better is the split.  The formula for the same is given in Fig. 46. While this particular project aims at utilizing Gini Index as the split parameter, many applications use Information Gain and entropy to make decisions.
+                </p>
+                <p style="text-align:left">
+                    The process of making predictions for testing is fairly simple: the tree is traversed from the root node by making decisions at each internal node based on the feature values of the data point and the splitting parameter (Gini Index in our case). The prediction is the value obtained at the final node, which is the leaf node.
+
+                </p>
+            </div>
+            </div>
+            <div class="row about-content">
+                    <h3>Data Preparation</h3>
+                    <p>
+                        The data preparation stage of decision tree classifier was conducted in multiple steps,
+
+                    </p>
+                    <li>
+                        The qualitative 'title' feature was transformed from the original cleaned dataset (Fig. 25) into quantitative vectors using two different embeddings: SpaCy and BERT. SpaCy, trained on large text corpora, learns various word embeddings and linguistic properties beneficial for NLP tasks like classification, named entity recognition, and part-of-speech tagging. While effective, SpaCy's capabilities are surpassed by BERT, a more advanced model trained rigorously on understanding textual nuances. BERT is commonly utilized for complex NLP tasks such as summarization, question answering, and error correction. By leveraging both SpaCy and BERT embeddings, the model gains a comprehensive understanding of the linguistic properties within the 'title' feature, facilitating accurate quantitative representation. The two embeddings are employed to evaluate their effectiveness in capturing the properties of the text documents in the project. Depending on which embedding works best for the decision trees, it could be selected as the primary embedding for further analysis.
+                    </li>
+                    <li>
+                        Once the 'title' feature was transformed into SpaCy and BERT embeddings, The quantitative target feature ‘views/elapsedtime’ from the cleaned dataset was transformed into a qualitative feature by categorizing all values less than 0.1 as "Performed Poorly" and those greater than 0.1 as "Performed Well" (Refer Fig. 47). The value 0.1 was chosen as the cutoff point as it represents the 50th percentile of the column.
+                    </li>
+                    <li>
+                        The two transformed columns, 'views/elapsedtime' and 'titles', were subsequently extracted to form two separate data frames—one containing SpaCy embeddings and the other containing BERT embeddings. These data frames were then divided into training (80%) (Refer Fig. 47) and testing sets (20%) (Refer Fig. 48). The data was partitioned into disjoint chunks for the two categories to facilitate training on one set of data and testing on unseen data. This approach helps identify potential overfitting during training, thereby aiding in the analysis of the model's capabilities. Sample test and Training Data can be found <a href="https://drive.google.com/drive/folders/1wCLZnrjDjBWjYv5P0u4Frp6p9fvqbK0d?usp=sharing" target="_blank">here</a>
+                    </li>
+                    <p> Click on each of the images below to view the sample dataset in each category. </p>
+                    <img src="images/Original_data.png" alt="intro_1">
+                    <p style="text-align:center">Fig.25 Sample of Original Cleaned Data</p style="text-align:center">
+                     
+            </div>
+            <div class="col-six tab-full left">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Train Data</h3>
+                            <h5>BERT Embeddings (Fig. 47)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_train_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_train_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_train_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div> 
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Train Data</h3>
+                            <h5>SpaCy Embeddings (Fig. 47)</h5>
+                        </div>
+                        <div class="timeline__desc">	
+                            <a href="images/DT_NB/Sample_X_train_SpaCy_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_train_SpaCy_DT.png" alt="intro_1" style="width:280px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_train_DT.png" alt="intro_1" style="width:120px; height:350px;">
+                            </a>
+                        </div>
+                    </div> 
+
+                </div> 
+            </div>
+
+            <div class="col-six tab-full right">
+                <div class="timeline">
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Test Data</h3>
+                            <h5>BERT Embeddings (Fig. 48)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_test_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_test_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_test_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_test_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Test Data</h3>
+                            <h5>SpaCy Embeddings (Fig. 48)</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <a href="images/DT_NB/Sample_X_train_BERT_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_X_test_BERT_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                            <a href="images/DT_NB/Sample_Y_train_DT.png" target="_blank">
+                                <img src="images/DT_NB/Sample_Y_test_DT.png" alt="intro_1" style="width:200px; height:350px;">
+                            </a>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+            <h3>Code</h3>
+            <div>
+                
+                <p> 
+                    The code to Decision Tree Classifier performed on python can be found here: <a href="https://colab.research.google.com/drive/1wJz5Jrl1mB8cSsF6oMhF869BbMvpQw3o?usp=sharing" target="_blank">SpaCy</a>, <a href=" https://colab.research.google.com/drive/1xa4Eeqxb6zmgTlQc0NeD25Z9GFJx6xu-?usp=sharing" target="_blank">BERT</a>
+                </p>
+
+            </div>
+            <div class="row about-content">
+                
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        The Decision Tree Model was trained on the training dataset, and the results were obtained from the testing dataset and visualized in Figure 49. Analysis of the visualization reveals that both the accuracy and recall metrics, derived from both BERT and SpaCy embeddings, achieved scores in the vicinity of 55%. Initially trained with the default 'max_depth' parameter, the model exhibited signs of overfitting, evident from the complex tree structure observed in Figure 50. However, upon adjusting the 'max_depth' parameter to 5, the model demonstrated improved fitting to the dataset, as depicted in Figure 51 (a) and Figure 51 (b).
+                    </p>
+    
+                </div>
+    
+                <div class="col-six tab-full right">
+                    <img src="images/DT_NB/DT_accuracy_Recall.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree evaluation metric (Fig. 49)</p style="text-align:center">
+                </div>
+                    <img src="images/DT_NB/decision_tree_plot_Maxdepth10.png" alt="intro_1">
+                    <p style="text-align:center">Initial Decision tree (Fig. 50)</p style="text-align:center"> 
+                    <img src="images/DT_NB/Decision_tree_plot_BERT.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree using BERT Embeddings (Fig. 51 (a))</p style="text-align:center">
+                    <img src="images/DT_NB/Decision_tree_SpaCy.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree using SpaCy Embeddings (Fig. 51 (b))</p style="text-align:center">
+                    <p>
+                            Furthermore, examination of the confusion matrix, Fig. 52 (a) and Fig. 52 (b) from both embeddings indicates an even distribution of both labels throughout the matrix. This uniform distribution suggests that the model effectively learned both features with equal proficiency.
+                    </p>
+                    <img src="images/DT_NB/Confusion_matrix_BERT_DT.png" alt="intro_1" style="width:400px; height:350px;">
+                    <img src="images/DT_NB/Confusion_matrix_Spacy.png" alt="intro_1" style="width:400px; height:350px;">
+                    <p>Confusion Matrix for BERT and SpaCy Embeddings DT (Fig. 52 (a) and Fig. 52 (b))</p>   
+                    <p>
+                        <h3>Conclusion</h3>
+                        <p>In conclusion, the experiment revealed that the decision tree classifier struggled to effectively train on the dataset due to its complexity. Nonetheless, the findings suggest the presence of a discernible pattern between YouTube video titles and their corresponding views over time. Although setting the 'max_depth' parameter to 5 helped prevent overfitting, it did not significantly improve model accuracy on the test dataset.
+                        </p>
+                        <p>
+                            The experiment, conducted using both BERT and SpaCy embeddings, aimed to observe any differences in predictions. Surprisingly, both embeddings performed similarly, indicating that the decision tree classifier may not effectively leverage the advanced linguistic characteristics captured by BERT. <b>This suggests that the decision tree classifier may not be the optimal model for capturing the complex patterns within text documents. Moving forward, it is evident that employing more advanced models like CNN or LSTMs may yield better classification results by effectively leveraging the intricate linguistic features present in the text. </b>
+                        </p>
+                    </p>
+                </div>
+
+
+        </div>
+    
+    </section>
+
+    <section id="SVM" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+         <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Support Vector Machines.</h1>
+                
+            </div>
+         </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Support Vector Machine (SVM) (refer Fig. 53) is one of the most advanced supervised machine learning algorithms, known for its capability in creating decision boundaries around complex classes. SVMs excel when the classes are separable, and a clear boundary can be defined between them. The primary goal of SVM is to find the hyperplane that maximizes the margin between these classes.
+                <p>
+                    <h5>SVMs: The linear separators </h5>
+                    SVMs are often referred to as linear separators because of their capability to find a linear decision boundary between classes. SVMs perform best when the classes are linearly separable, as the algorithm aims to find a mathematical equation such as a line or hyperplane that maximizes the distance between the classes, Refer to Fig. 54 for an example. Although SVMs are termed as linear separators, they are capable of delineating boundaries around non-linear data using kernels. Kernels are functions that map the input data to a higher dimension where linear separation becomes possible.
+                </p>
+                <h5 style="text-align:left">How do Kernels work? </h5>
+                <p style="text-align:left">
+                    Kernels, as mentioned earlier, are used in situations where the classes are not linearly separable (Refer to Fig. 55). Kernels help in transforming the input data to a higher dimension in the hope of finding a linear separator in that space. Kernels are fascinating functions because they allow SVMs to compute the decision boundary in the original feature space as if it were a higher-dimensional space. Kernels are specific types of functions that compute the dot product efficiently without explicitly transforming the data into the higher-dimensional space.
+                </p>
+                <p style="text-align:left">
+                    The dot product is extremely helpful in kernels because it leverages the fact that SVMs only need to calculate the dot product between data points in the feature space, avoiding the explicit computation of vectors in a higher-dimensional space. Kernels compute the dot product directly in the higher-dimensional space, thereby reducing the complexity of calculations and allowing for efficient computation without the need for explicit transformation.
+                </p>
+                <img src="images/SVM/Image_3.png" alt="intro_1" style="width: 90%;">
+                <p style="text-align:left">SVM classifier on various kernels (Fig. 55)</p>
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/SVM/Image_1.jpeg" alt="intro_1">
+                <p style="text-align:center">SVM Architecture (Fig. 53)</p style="text-align:center">
+                <img src="images/SVM/Image_2.jpeg" alt="intro_1">
+                <p style="text-align:center">An SVM example for linearly separable (Fig. 54)</p style="text-align:center">
+                <h5 style="text-align:left">Polynomial and RBF kernel</h5>
+                <p style="text-align:left">
+                    The Polynomial Kernel function (Refer Fig. 56) computes a dot product between the input vectors in the original feature space and raises the sum by the specified degree d. The constant c allows for shifting the polynomial. On the other hand, the Radial Basis Function (RBF) Kernel (Refer Fig. 56) measures the similarity between vectors based on the Euclidean distance. An example is presented in Fig. 56 to illustrate the casting of 2D points into 6D points using a polynomial kernel.
+                </p>
+
+            </div>
+            <div>
+                <img src="images/SVM/Image_16.png" alt="intro_1" style="width: 50%;">
+                <p style="text-align:right">Kernels and Example (Fig. 56)</p>
+            </div>
+            </div>
+            <div class="row about-content">
+                    <h3>Data Preparation</h3>
+                    <p>
+                        The data preparation stage began with, collecting thumbnail URLs using a YouTube API request (refer to Fig. 57), followed by extracting the thumbnails using another Google Drive API request (refer to Fig. 58). Subsequently, the thumbnails were pre-processed using the VGG16 neural network to extract the most important features from the images. The output of the VGG16 network was then stored in a numpy file to be used as input for the SVM model. The model is then trained to predict if the thumbnails would fall into the category of the video performing well or performing poorly. The link to the dataset can be found <a href="https://drive.google.com/file/d/1-8jc6hXnBlEOQkJTOu90utcydQ1KMBec/view?usp=sharing." target="_blank">here</a>. The link to the sample thumbnails extracted can be found <a href="https://drive.google.com/drive/folders/1WRS8AwcwnveJoy1ynoUqwDZyH_3_3n4o?usp=drive_link" target="_blank">here</a>.
+                    </p>
+                    <p> Click on each of the images below to view the sample dataset in each category. </p>
+                    <img src="images/Original_data.png" alt="intro_1">
+                    <p style="text-align:center">Fig.57 Sample of Original Cleaned Data</p style="text-align:center">
+                    <img src="images/SVM/Image_5.png" alt="intro_1">
+                    <p style="text-align:center">Fig.58 Sample of thumbnails extracted</p style="text-align:center">
+                     
+            </div>
+
+            <h3>Code</h3>
+            <div>
+                
+                <p> 
+                    The code to Support Vector Machine Classifier performed on python can be found here: <a href="https://colab.research.google.com/drive/157zPvIs7lG45K_LCdLnz4jp1ap_AejwU?usp=sharing" target="_blank">SVM</a>.
+                </p>
+
+            </div>
+            <div class="row about-content">
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        The output of VGG16 was used as input for various SVM models fine-tuned with different kernels and C values. These models were evaluated based on precision, accuracy, recall, and F1-score. The results obtained were compiled into a table, as shown in Table 1. Confusion matrices for the SVM models can be found in Figures 59, 60, 61.
+                    </p>
+                    <p>
+                        It was observed that the RBF kernel with a C value of 1 yielded the best result, achieving an accuracy of 60%, precision of 62%, recall of 60%, and F1-score of 61%. These results are depicted in Figure 62. The linear kernel performed next best, consistently achieving similar results across different C values, with an accuracy of 56%, precision of 58%, recall of 57%, and F1-score of 57.5%. The polynomial kernel performed the least favorably, with the highest scores achieved at a C value of 10, resulting in an accuracy of 59%, precision of 63%, recall of 48%, and F1-score of 54%. Despite exhibiting higher precision and accuracy, the polynomial kernel tended to underfit the data.
+                    </p>
+                </div>
+
+                <div class="col-six tab-full right">
+                    <div style="text-align: center;">
+                        <img src="images/SVM/Image_6.png" alt="intro_1" style="margin-top: 150px;">
+                        <p style="text-align:center">SVM evaluation metric (Fig. 62)</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center;">
+                <img src="images/SVM/Image_14.png" alt="intro_1">
+                <p style="text-align:center">SVM classifier on various kernels (Table. 1)</p>
+            </div>
+
+            <div class="col-six tab-full left">
+                    <div class="timeline">
+    
+                        <div class="timeline__block">
+                            <div class="timeline__header">
+                                <h3>Linear Kernel</h3>
+                                <h5>C Value equal to 1 (Fig. 59)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/SVM/Image_7.png" target="_blank">
+                                    <img src="images/SVM/Image_7.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+            </div> 
+    
+            <div class="col-six tab-full right">
+                    <div class="timeline">
+    
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <h3>Polynomial Kernel</h3>
+                                <h5>C value equals to 1 (Fig. 61)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/SVM/Image_9.png" target="_blank">
+                                    <img src="images/SVM/Image_9.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> 
+
+    
+    
+                    </div>
+            </div> 
+            <center>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>RBF Kernel</h3>
+                            <h5>C Value equal to 1 (Fig. 60)</h5>
+                        </div>
+                        <div class="timeline__desc">   
+                            <a href="images/SVM/Image_8.png" target="_blank">
+                                <img src="images/SVM/Image_8.png" alt="intro_1" style="width:500px; height:350px;">
+                            </a>
+                        </div>
+                    </div> 
+            </center>
+
+            
+                
+            <h3>Conclusion</h3>
+            <p>In conclusion, the evaluation of SVM models with various kernels and C values using VGG16-extracted features has provided insights into their performance on image classification tasks. Among the experiments conducted, the RBF kernel with a C value of 1 emerged as the winner, exhibiting strong overall performance with balanced accuracy, precision, recall, and F1-score metrics. The consistent performance of the linear kernel across different C values highlights its reliability for this task. However, the polynomial kernel, particularly at higher C values, showed signs of potential overfitting or underfitting, this shows the importance of careful parameter selection. 
+            </p>
+
+
+        </div> 
+    
+    </section>
+
+    <section id="Conclusion" class="s-about target-section">
+        <div class="row">
+         <div class="row narrow section-intro has-bottom-sep">
+             <div class="col-full">
+                <h3>Conclusion</h3>
+                <h1>The final conclusion</h1>
+             </div>
+         </div>
+            <div class="col-six tab-full left">
+
+                <p> 
+                    To explore the captivating world of YouTube titles and thumbnails and their impact on views, this study delves deep into how these aspects can influence video performance over time. By analyzing these factors, valuable insights are uncovered on how to improve channel performance. Firstly, the research reveals patterns regarding the impact of title length on video performance, noting that longer titles tend to attract higher viewership (refer Fig. 61) compared to shorter ones  (refer Fig. 62). This suggests that while attention-grabbing titles are crucial, providing a sufficiently detailed title is also essential to attract viewers. Additionally, there is a direct correlation between title length and video performance metrics such as likes, comments, and subscribers gained.
+                </p>
+
+                <p> Moreover, the study highlights the significance of visual appeal through thumbnail design, showing that careful thumbnail design is vital for enhancing video performance. Specific colors, images, or styles may be more effective in capturing viewer interest and encouraging clicks on the video (refer Fig. 63,64). The interplay between titles and thumbnails plays a crucial role in attracting views, with effective thumbnails that complement the title contributing to higher view counts. Certain combinations of thumbnails and titles may perform exceptionally well by increasing viewership and setting clear expectations about the video content. Therefore, crafting a compelling title and thumbnail is considered the initial step towards a successful video.
+                </p>
+                <img src="images/SVM/Image_12.png" alt="intro_1">
+                <p style="text-align:center">Fig. 63 Attractive Thumbnail</p style="text-align:center">
+                <img src="images/SVM/Image_13.png" alt="intro_1">
+                <p style="text-align:center">Fig. 64 Attractive Thumbnail Example 2</p style="text-align:center">
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/SVM/Image_10.png" alt="intro_1">
+                <p style="text-align:center">Fig. 61 Short Title</p style="text-align:center">
+                <img src="images/SVM/Image_11.png" alt="intro_1">
+                <p style="text-align:center">Fig. 62 Long Title</p style="text-align:center">
+                <p>The relationship between the recommendation system and optimizing titles and thumbnails is another intriguing aspect. As titles and thumbnails directly impact the number of views a video gains, they likely influence the recommendation system, which heavily relies on video click-through rates. Understanding peak viewer activity times can help optimize content release schedules for maximum visibility and engagement. Additionally, demographic factors play a role in viewer preferences for thumbnails and titles. Different audience segments may respond differently to specific colors, images, or content styles, highlighting the importance of audience segmentation and targeting in content creation.
+                </p>
+                <p>
+                    Future studies could focus on developing advanced systems to learn the combinations of titles and thumbnails that attract views. By employing such advanced systems, YouTube content creators can benefit from crafting appropriate titles and thumbnails for their videos. Analyzing the impact of click-through rates on video performance, rather than absolute view counts, can provide insights into video recommendation system behavior. Furthermore, assessing the relationship between views and video duration can improve video content and overall performance. The field of youtube has so much potential for analysis with all the numbers that flow in every second from videos around the world. Conducting future research in the field and carefully examining the nature of the titles and thumbnails can bring our analysis not just in the field of youtube but also a general understanding of the human brain by learning the patterns that tend a youtube recommendation to be converted to a view. 
+
+                </p>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>
+                    In conclusion, the findings underscore the importance of both the art and science behind video content creation on YouTube.Effective thumbnail design, aptly summarized by the saying <b>'A picture is worth a thousand words'</b>, along with compelling titles and a profound understanding of viewer behavior, serves as the cornerstone for enhancing video performance and fostering audience engagement. This holistic approach to content optimization opens up new opportunities for creators to connect with their audiences and thrive in the dynamic world of digital content. Furthermore, the insights gained from this analysis are not limited to content creators alone; they also hold significant potential for advertisements and marketing strategies. By identifying patterns in visual elements that attract attention, advertisers and marketing professionals can leverage this knowledge to attract more customers to their products or services. UX designers can also apply the findings from this research study of effective content creation by improving the user experience. By considering factors such as titles and thumbnails designs, the designers can get much more creative in creating engaging user interfaces attracting human attention. 
+
+                </p>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- s-stats
+    ================================================== -->
+    <section id="contact" class="s-contact target-section" >
+
+        <div class="overlay"></div>
+
+        <div class="row narrow section-intro">
+            <div class="col-full">
+                <h3>Contact</h3>
+                <h1>Say Hello.</h1>
+            </div>
+        </div>
+
+        <div class="row contact__main">
+            <div class="col-eight tab-full contact__form">
+                <form name="contactForm" id="contactForm" method="post" action="/hia">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Your message was sent, thank you!<br>
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+                        
+            </div>
+            <div class="col-four tab-full contact__infos">
+                <h4 class="h06">Email</h4>
+                <p>Rohit.Raju@colorado.edu<br>
+                </p>
+
+                <h4 class="h06">Address</h4>
+                <p>
+                1600 Amphitheatre Parkway<br>
+                Mountain View, CA<br>
+                94043 US
+                </p>
+            </div>
+
+        </div>
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="col-full">
+
+                <div class="footer-logo">
+                    <a class="site-logo" href="index.html"><img src="images/frost.png" alt="Homepage" width="300"></a>
+                </div>
+
+                <ul class="footer-social">
+
+                    <li><a href="https://www.linkedin.com/in/rohit-r-0a61a5201/" target=”_blank”>
+                        <i class="im im-linkedin" aria-hidden="true"></i>
+                        <span>Linkedin</span>
+                    </a></li>
+                    <li><a href="https://www.youtube.com/@FROSTtubee" target=”_blank”>
+                        <i class="im im-youtube" aria-hidden="true"></i>
+                        <span>Youtube</span>
+                    </a></li>
+                    <li><a href="https://www.instagram.com/thefrostube/" target=”_blank”>
+                        <i class="im im-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a></li>
+                    </a></li>
+                </ul>
+                    
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright <a href="https://styleshout.com/?s=hola" target="_blank">Hola 2024</a></span> 
+                    <span>Images from: <a href="https://images.google.com/" target="_blank">Google Images</a></span>
+                    <span>Design by <a href="https://www.linkedin.com/in/rohit-r-0a61a5201/" target=”_blank”>Rohit Raju</a></span>	
+                </div>
+
+                <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
+
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end photoSwipe background -->
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
