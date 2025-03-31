@@ -232,10 +232,10 @@
         <p>Clustering is an unsupervised machine learning method that deals with finding clusters of most similar tokens among the set of large sets of tokens in a dataset. The task of the algorithm is to use an unlabeled dataset to find clusters of similar data using distance metric like the cosine similarly or cosine distance. The two types of clustering algorithm used in this project are, Kmeans clustering and Hierarchical clustering.</p>
         
         <h5>K-means Clustering:</h5>
-        <p>The algorithm behind k-means is a learning algorithm that groups data points into k clusters, given the value of k. Each cluster is represented by a centroid, which is the average or mean of all data points within that cluster. The algorithm works as follows, it works iteratively, assigning data points to the nearest centroid and then recalculating the centroids based on the new cluster assignments, it’s done using a distance metric e.g., Euclidean distance (refer to fig. 15 ) to determine the proximity of data points to cluster centroids. The main objective of k-means is to minimize the sum of squared distances between each data point and its assigned cluster centroid, eventually finding the most minimum squared distance between points and the centroid and forming clusters within the dataset.</p>
+        <p>The algorithm behind k-means is a learning algorithm that groups data points into k clusters, given the value of k. Each cluster is represented by a centroid, which is the average or mean of all data points within that cluster. The algorithm works as follows, it works iteratively, assigning data points to the nearest centroid and then recalculating the centroids based on the new cluster assignments, it’s done using a distance metric e.g., Euclidean distance (refer to fig. 15 ) to determine the proximity of data points to cluster centroids, it calculates the direct linear distance between data points, effectively acting as a great similarity score for clustering algorithms. The main objective of k-means is to minimize the sum of squared distances between each data point and its assigned cluster centroid, eventually finding the most minimum squared distance between points and the centroid and forming clusters within the dataset.</p>
         
         <h5>Hierarchical clustering:</h5>
-        <p>The algorithm behind hierarchical clustering groups data points into a hierarchy of clusters, represented as a tree-like structure (dendrogram), where clusters are eventually merged or split based on similarity. The similarity measure used in the project is the cosine similarity (refer to fig. 16). It either starts with each data point as its own cluster and iteratively merges the closest clusters until a single cluster remains, or starts with all data points in one cluster and iteratively splits it into smaller clusters until each data point is in its own cluster.</p>
+        <p>The algorithm behind hierarchical clustering groups data points into a hierarchy of clusters, represented as a tree-like structure (dendrogram), where clusters are eventually merged or split based on similarity. The similarity measure used in the project is the cosine similarity (refer to fig. 16), it computes the cosine of the angle between two vectors, giving a robust similarity measure that focuses on direction rather than magnitude. It either starts with each data point as its own cluster and iteratively merges the closest clusters until a single cluster remains, or starts with all data points in one cluster and iteratively splits it into smaller clusters until each data point is in its own cluster.</p>
         
         <p>In the current project, the work deals with using clustering to group the most similar words from the description of the new articles that talk a lot about bias and fairness in AI systems. Through clustering the algorithm is predicted to be able to clearly distinguish between the three classes of data and probably seep in and discover a fourth class to the dataset.</p>
         
@@ -276,7 +276,9 @@
       <h5>Results:</h5>
       <p>The figure 19 represents the silhouette scores that were calculated for various numbers of clusters. In our example the silhouette scores represent that the data can be best represented with three clusters as observed by a high score. To represent the data in three dimensions, PCA has been applied and the new data points are represented in three dimensions along with their cluster information, as observed in figure 20. From the figure it can be observed that the data has more or less smoothly distinguished itself into three clusters. Though the dataset was collected to represent bias and fairness, it’s fascinating to see a new class of dataset. This could potentially be the cause of outliers, it is found that the cluster represented using the purple color seems to be an outlier to the dataset, these utterances could be the ones that have nothing to do the bias and fairness as expected in any utterances.</p>
       <p>Now moving our attention to the Hierarchical clustering (hclust) results, it is observed from figure 21 that the 30 most influential words fell into two categories as expected. Observing the words that fell into each of these classes, it looks as though the model was able to distinguish between fairness and bias well, the algorithm classifying words such as ‘good’ and ‘happy’ in the first class potentially represents fairness, while ‘bias’ in the second class obviously represents ‘bias’. The most fascinating fact about the clusters is that ‘data training’ has fallen into the ‘bias’ class, indicating that often people relate training to bias, which is originally the cause of bias, and happiness being associated with fairness suggests that people often are happy about AI algorithms being fair in certain cases, indicating that fairness in AI algorithms creates happiness among humans.</p>
-      <h5 >Conclusion:</h5>
+      <p>
+        Comparing the two algorithms, the silhouette score (kmeans) enhanced with PCA shows that the data is best represented by three clusters; this suggests that there exists a nuanced separation in the data. In contrast, hierarchical clustering grouped the 30 most influential words into two clear categories. It was able to better classify the two categories, bias and fairness effectively. 
+      </p><h5 >Conclusion:</h5>
       <p style="text-align:justify">From the detailed analysis conducted using various clustering algorithms, the following information was perceived. It was observed that bias and data training occurred together suggesting a close relationship between the two as expected. It is also observed that fairness in AI systems creates happiness among humans. Therefore, fairness must be the first priority while developing AI models.</p>
       <div style="text-align:center">
       <img src="images/textmining/fig_21.png" alt="fig. 21">
@@ -297,13 +299,21 @@
       <div class="col-six tab-full left">
         <h5>Overview:</h5>
         <p>Association Rule Mining or ARM is another unsupervised machine learning algorithm. The logic behind ARM is the technique that discovers relationships and patterns between items in datasets. The relationship that talks about the association between items in the transaction. Given a set of items, ARM tries to find the support, confidence and lift of items occurring together. To understand more about the terms associated with ARM, here is a quick overview, 
-  Support: It measures how frequently an itemset appears in the dataset.
-  Confidence: Indicates how often the consequent (the "then" part of the rule) occurs when the antecedent (the "if" part) is present
-  Lift: Compares the observed confidence with the expected confidence, indicating how much more likely the consequent is to occur given the antecedent.
-  The formulas associated with each of the terms is as seen in Figure 22</p>
-        
+        <p>Support: It measures how frequently an itemset appears in the dataset. The measure mainly deals with the frequency of itemset. 
+        </p> 
+        <p>Confidence: Indicates how often the consequent (the "then" part of the rule) occurs when the antecedent (the "if" part) is present.
+        </p>       
+        <p>Lift: Compares the observed confidence with the expected confidence, indicating how much more likely the consequent is to occur given the antecedent.
+        </p> 
+
+        The formulas associated with each of the terms is as seen in Figure 22</p>
+        <p>Apriori Algorithm: it’s the backbone of the rule mining that takes place using ARM, it is designed to uncover frequent items within a large dataset. It first generates frequent item sets and then throws out those that do not fall within a minimum support count. This iterative approach makes it highly effective for tasks like market basket analysis
+        </p>
+        <p>
+            ARM is used in the project to find the most closely occurring words, the goal is to realize the words in the domain of fairness and bias that occur together. Through that approach, we aim to understand the relationship between words surrounding bias and fairness. 
+        </p>
         <h5>Data Prep:</h5>
-        <p>To perform ARM the data must be transformed into a transaction dataset. To avoid messy data, a subset of data is collected from the dataset to perform ARM. This subset of data is then cleaned and converted to transaction data, refer fig. 23 to view processed dataset and refer figure 17 to view a sample pre-processed dataset.</p>
+        <p>To perform ARM the data must be transformed into a transaction dataset. The dataset is first cleaned to remove stop words, special symbols, words that aren’t in english, words that aren’t part of the dictionary to obtain a cleaned dataset for processing. To avoid messy data, a subset of data is collected from the dataset to perform ARM. This subset of data is then cleaned and converted to transaction data, refer fig. 23 to view processed dataset and refer figure 17 to view a sample pre-processed dataset. Sample data before and after cleaning can be found <a href="https://drive.google.com/drive/folders/12QhJkqVIpCbYyTcLEk_SKbWmD_5QKEn0?usp=sharing">here</a></p>
         
         <h5>Code:</h5>
         <p>The code associated with ARM can be found <a href="https://colab.research.google.com/drive/1F1rJa9NdcgkO6EDtQu26UncImVq024pE?usp=sharing">here</a>.</p>
@@ -319,22 +329,31 @@
       <!-- Right Column: Images -->
       <div class="col-six tab-full right" style="text-align:center">
         <img src="images/textmining/fig_22.webp" alt="fig. 22">
+        <br>
         <span>Fig. 22</span>
         <br>
+        <img src="images/textmining/fig_17.png" alt="fig. 17">
+        <br>
+        <span>Fig. 17</span>
         <br>
         <img src="images/textmining/fig_23.png" alt="fig. 23">
+        <br>
         <span>Fig. 23</span>
         <br>
         <img src="images/textmining/fig_24.png" alt="fig. 24">
+        <br>
         <span>Fig. 24</span>
         <br>
         <img src="images/textmining/fig_25.png" alt="fig. 25">
+        <br>
         <span>Fig. 25</span>
         <br>
         <img src="images/textmining/fig_26.png" alt="fig. 26">
+        <br>
         <span>Fig. 26</span>
         <br>
         <img src="images/textmining/fig_27.png" alt="fig. 27">
+        <br>
         <span>Fig. 27</span>
         <br>
        
@@ -357,12 +376,13 @@
   Overview:
   LDA is an unsupervised learning algorithm, the algorithm is a probabilistic topic modeling algorithm used to uncover hidden themes or topics within a collection of documents by analyzing word co-occurrence patterns. It assumes each document is a mixture of topics, and each topic is a probability distribution over words.</p>
         
-        <p>LDA utilizes topic modeling, it aims to discover the underlying topics or themes in a corpus of documents (refer fig. 29).</p>
+        <p>Topic modeling: LDA quantifies the distribution of topics across documents. This reveals patterns and overlaps within the corpus. Topic modeling further helps uncover latent semantic patterns, revealing not just obvious relationships between hidden relationships that emerge in large unstructured datasets (refer fig. 29) 
+        </p>
         
         <p>LDA is utilized in the work to identify patterns or topics within the dataset that most frequently occur together. Though, a fair idea has been perceived from the other two unsupervised learning techniques (ARM, clustering). LDA will help understand the most important topics being discussed in these news articles and how it relates to bias and fairness.</p>
         
         <h5>Data Prep:</h5>
-        <p>First, the data is pre-processed by importing it in the lowercase form, removing punctuations and numeric values, and removing common words that do not hold much value. Then, the text is divided into individual words by CountVectorizer, and the word frequencies for each document are used to create a document-term matrix. This word-topic matrix is used as input for LDA, which goes ahead to identify the hidden topics by modeling each document as a mix of topics and each topic as a mix of words. Refer figure 30 to view a sample count vectorized dataset and figure 17 to view a sample pre-processed dataset.</p>
+        <p>First, the data is pre-processed by importing it in the lowercase form, removing punctuations and numeric values, and removing common words that do not hold much value. Then, the text is divided into individual words by CountVectorizer, and the word frequencies for each document are used to create a document-term matrix. This word-topic matrix is used as input for LDA, which goes ahead to identify the hidden topics by modeling each document as a mix of topics and each topic as a mix of words. Refer figure 30 to view a sample count vectorized dataset and figure 17 to view a sample pre-processed dataset. Sample countvectorized data can be found <a href="https://drive.google.com/drive/folders/12QhJkqVIpCbYyTcLEk_SKbWmD_5QKEn0?usp=sharing">here</a></p>
         
         <h5>Code:</h5>
         <p>The code file associated with LDA can be found <a href="https://colab.research.google.com/drive/1CPM_igWSlf7G8mZx7-taRlXE3Bf7GIws?usp=sharing">here</a></p>
@@ -381,6 +401,8 @@
         <img src="images/textmining/fig_29.webp" alt="fig. 29">
         <span>Fig. 29</span>
         <br>
+        <img src="images/textmining/fig_17.png" alt="fig. 17">
+        <span>Fig. 17</span>
         <img src="images/textmining/fig_30.png" alt="fig. 30">
         <span>Fig. 30</span>
         <br>
