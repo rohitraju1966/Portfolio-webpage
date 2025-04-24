@@ -53,6 +53,9 @@
               <li><a class="smoothscroll" href="#Clustering" title="Clustering">Clustering</a></li>
               <li><a class="smoothscroll" href="#ARM" title="ARM">Association Rule Mining</a></li>
               <li><a class="smoothscroll" href="#LDA" title="LDA">Latent Dirichlet Allocation</a></li>
+              <li><a class="smoothscroll"  href="#NaiveBayes" title="Naive Bayes">Naive Bayes</a></li>
+              <li><a class="smoothscroll"  href="#DecTrees" title="DecTrees">Decision Trees</a></li>
+              <li><a class="smoothscroll"  href="#SVM" title="SVM">SVM</a></li>
             </ul>
           </nav>
           
@@ -99,6 +102,10 @@
                 </p>
                 <p>
                     The ethics of AI is the most controversial debate since there is uncertainty in its application in the industry in a just manner, it requires thorough regulation and scrutiny. Lastly, the future ability of AI to complement human intelligence will transform the work in the future. Ensuring fairness in AI is vital since unfair algorithms have the power to increase existing inequalities. Bias has a tendency to arise due to biased training data, human biases or improper model assumptions. The consequence of bias in the business world can be very severe, especially in industries such as work, lending, health and law enforcement, where an AI makes a decision that has a direct and tangible impact on individuals' lives. Governments and regulators around the globe are evolving towards coming up with laws which guarantee artificial intelligence platforms to be developed and deployed based on honor, transparency, and ethical quality. Consequently, firms are embracing strict fairness auditing, initiating advanced bias abatement techniques, and employing variety-rich and representative data so that their AI systems will become elevated in validity as well as inclusion.
+                </p>
+                <p>
+                    Following the transformation, it is very important to investigate and understand how society is reacting to the advancement of AI. To be specific, the aspects of fairness and responsibility is the one that must be analysed. While much research has shown to have developing technical fixes or regulatory solutions, there is very little known about how the narrative is being constructed in the public space, especially through the media.News reports often serve as a reflection of social concerns, inclinations, and aspirations and are therefore a valuable resource to analyze. This particular work delves into uncovering patterns of construction of discourses on AI fairness and bias in mainstream media.. It aims to learn the sentiment behind these news articles that are made public to learn more about how the public perceives AI. Through title and content analysis of thousands of news reports, the study attempts to identify patterns in trends, sentiment, and frames that go otherwise unnoticed. This kind of analysis can pick up very powerful signals in the way the word is thinking about the moral structure around AI. This can guide future research agendas, policy, and public debate. The goal of the project is to conduct experiments to answer the following research questions:
+
                 </p>
                 <img src="images/textmining/intro_pic.png" alt="AI Bias and Fairness" width="100%">
                 <h3>Research Questions</h3>
@@ -425,6 +432,423 @@
       </div>
     </div>
   </section>
+
+  <section id="NaiveBayes" class="s-works target-section">
+    <div class="row about-content about-content--timeline">
+     <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full">
+            <h3>ML modeling</h3>
+            <h1>Naive Bayes Classifier</h1>
+            
+        </div>
+     </div>
+
+    <div class="row about-content">
+
+        <div class="col-six tab-full left">
+            <h3>Overview</h3>
+            <p>
+                The main principle behind the Multinomial Naive Bayes (MNB) algorithm is based on Bayes’ theorem (refer Fig. 33), which assists Multinomial Naive Bayes classifiers in determining the probability of a given set of features belonging to a set of classes. Multinomial Naive Bayes is used in scenarios where the data are presented in a categorical format. During training, the model learns the probability of each feature occurring in a given class. This allows it to develop a probabilistic understanding of the dataset. The probabilities calculated during training are then used during testing. This enables the model to predict the likelihood of a given set of unseen feature values and select the class with the highest probability. The Naive Bayes algorithm as a whole assumes independence between features, which is why it earned the name 'naive' Bayes. In this particular project, the Naive Bayes model is used to predict the performance categories such as 'Performed Poorly' or 'Performed Well' based on the given YouTube titles.
+            </p> 
+            <p>
+            
+             Bernoulli Naive Bayes is another variant of the Naive Bayes algorithm specifically designed to handle binary data. It measures the presence or absence of a particular attribute in a dataset. Bernoulli Naive Bayes also makes the assumption that features are independent of one another. This means that the presence or absence of one feature does not affect the presence or absence of another feature. During training, Bernoulli Naive Bayes calculates the probability of each feature occurring or not occurring in each class. It does this by counting the number of occurrences of each feature in each class and dividing by the total number of documents in that class (refer Fig. 34).
+                
+            </p>
+            <p>
+                MNB models in this experiment are used to classify text documents extracted from news articles into two classes, bias and fairness. By doing so, we aim to build a classifier that can easily help classify articles into the respective sentiment behind the use of AI in industries. 
+
+            </p>
+        </div>
+
+        <div class="col-six tab-full right" style="text-align:center">
+            <img src="images/DT_NB/MNB_formula.png" alt="intro_1">
+            <span>Multinomial Naive Bayes formula (Fig. 37)</span>
+            <img src="images/DT_NB/BNB_formula.png" alt="intro_1">
+            <span>Bernoulli Naive Bayes formula (Fig. 38)</span>
+            <img src="images/DT_NB/Laplace_Formula.png" alt="intro_1">
+            <span>Laplacian Smoothing Formula (Fig. 39)</span>
+            <h5>Importance of smoothing in Naive Bayes</h5>
+            <p style="text-align:left">
+                Smoothing is a process aimed at preventing occurrences of zero probabilities when testing datasets. During testing, there may be instances where a particular feature has no occurrence in the training dataset, while other features may occur simultaneously. This situation would erroneously result in a zero probability for the entire test dataset, despite the chances of occurrence not being truly zero. To address this issue, various smoothing techniques such as Laplace smoothing (add-one smoothing), Lidstone smoothing, or Dirichlet smoothing are employed. By utilizing smoothing methods like Laplace smoothing, we ensure that neither the numerator nor the denominator in probability calculations becomes zero. Fig. 35 provides the formula for the most commonly used Laplace smoothing method.
+            </p>
+            
+        
+        </div>
+    </div>
+    <div class="row about-content">
+
+        <div class="col-six tab-full left">
+            <h3>Data preparation</h3>
+            <p>
+                The data preparation stage of Naive Bayes was conducted in three steps,
+                <li>
+                    The titles and articles extracted from the newsAPI for bias and fairness are then converted into a text feature by merging the two columns. The column is then extracted, cleaned and utilized to prepare for the supervised learning models. (Refer fig. 40)
+                </li>
+                <li>
+                    The cleaned 'text' column was transformed utilizing the TF-IDF function to enable the text to be in an appropriate input form to the Naive Bayes algorithm. Term Frequency Inverse Document Frequency (TF-IDF) is a function that gives numeric values to every word in a sentence according to its significance in the 'titles' column. It helps in presenting the text meaningfully. (Refer Fig. 41) 
+                </li>
+                <li>
+                    The column transformed was then extracted to create a new data frame along with the labels. This data frame was then split into training (with labels) (Refer Fig. 41 and Fig. 42) and test sets (Refer Fig. 43). The data was split into disjoint pieces for the two classes to allow training on one set of data and testing on unseen data. This methodology helps determine whether overfitting might occur at training time, hence contributing to understanding the strengths of the model. Sample test and Training Data available <a href="https://drive.google.com/drive/folders/12QhJkqVIpCbYyTcLEk_SKbWmD_5QKEn0?usp=sharing" target="_blank">here</a>
+                </li>
+            </p>
+            <img src="images/textmining/fig_43.png" alt="intro_1">
+            <p style="text-align:center">Fig. 43 Test data sample</p style="text-align:center">
+            <h3>Code</h3>
+            <p>The code to Naive Bayes’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1WFMQD6AQmBJzXwqBOpJa7XapwABFGw8x?usp=sharing" target="_blank">here</a>. </p>
+            
+            <h3>Results</h3>
+            <p>
+                The Multinomial Naive Bayes model was trained on the training dataset with the value of alpha parameter set as 0.2 for the implementation of Laplace smoothing. The results were obtained by running the model on the test dataset, as shown in Figure 40. It is apparent from the results that the precision of the model was higher for the 'bias' label, that is, approximately 75%, while the precision of the 'fairness' label was lower at about 60%. The recall was, nonetheless, greater for the 'fairness' label at approximately 90%, compared to the 'bias' label which had approximately 65%. The mean accuracy, precision, recall, and F1 score for the model were also approximately 73%, as illustrated in Figure 44.
+            <p>
+                In addition, reviewing the confusion matrix (Figure 45), the model is clearly showing a little imbalance in label prediction. Although the 'bias' label was predicted 79 times, the 'fairness' label experienced more misclassifications. This indicates the model is potentially a little biased in favor of predicting the 'bias' class, but has nevertheless learned to recognize both categories fairly well.
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+                The results demonstrate that the model wasn’t able to learn all the patterns between the news text and the labels, which are bias/fairness labels for the dataset. It did show the existence of some patterns with accuracy, precision and recall around 73%. The model did perform better than random guessing. But, it falls short of being able to contribute significantly due to a lack of data. 
+
+            </p>
+            <p>
+                <b>These results do align with our understanding of Naive Bayes classifiers. The classifier is a basic probabilistic classifier and lacks the advanced capability to exactly deserne the patterns. To be able to do so, we must encode the data using advanced neural network models like LSTM or BERT to understand the text better. 
+
+                </b>
+            </p>
+        </div>
+        <div class="col-six tab-full right">
+         <img src="images/textmining/fig_40.png" alt="intro_1">
+         <p style="text-align:center">Fig. 40 Sample of Original Data</p style="text-align:center">
+         <img src="images/textmining/fig_41.png" alt="intro_1">
+         <p style="text-align:center">Fig. 41 Training data sample</p style="text-align:center">
+         <img src="images/textmining/fig_42.png" alt="intro_1">
+         <p style="text-align:center">Fig. 42 Training data sample</p style="text-align:center">
+        </div>
+
+      <div class="col-six tab-full right">
+          
+          <p>
+            <img src="images/textmining/fig_44.png" alt="intro_1">
+            <p style="text-align:center">Fig. 44 Model Evaluation Metric</p style="text-align:center">
+            <img src="images/textmining/fig_45.png" alt="intro_1">
+            <p style="text-align:center">Fig. 45 Naive Bayes Confusion Matrix</p style="text-align:center">
+          </p>
+      </div>
+    </div>
+    </section>   
+    <section id="DecTrees" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Decision Trees.</h1>
+                
+            </div>
+        </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Decision trees (refer Figure 43) are supervised machine learning algorithms, suitable for both classification and regression tasks. The algorithm operates by partitioning the dataset's features into smaller sets with the help of input features, aiming to predict the output feature. The model trains itself by adjusting the decision of splits at each node, aiming to find the best split using either the Gini Index or Information Gain. 
+                </p>
+                <p>
+                    <h5>What is Gini Index?</h5>
+                    Gini index is a measure of the impurity present in the dataset, also referred to as entropy. In the context of decision trees, it calculates how often a randomly chosen element from the set would be incorrectly classified if it were randomly labeled according to the distribution of labels in the subset. The formula for the same is given in Fig. 44. 
+                </p>
+                <h5 style="text-align:left">What is Entropy ?</h5>
+                <p style="text-align:left">
+                    Entropy measures the amount of disorder or uncertainty in the dataset, the formula is provided in Figure 45. It is commonly used in making decisions at nodes in the decision trees. Entropy minimization is the aim while making decisions on a decision tree. Maximum entropy would mean that the classes are evenly distributed and consist of maximum disorder.
+                </p>
+                <img src="images/DT_NB/Entropy_formula.png" alt="intro_1">
+                <p style="text-align:center">Entropy formula (Fig. 48)</p style="text-align:center">
+                <img src="images/DT_NB/Information_gain.png" alt="intro_1">
+                <p style="text-align:center">Information Gain formula (Fig. 49)</p style="text-align:center">
+            
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/DT_NB/DT_image.png" alt="intro_1">
+                <p style="text-align:center">Decision Tree Example (Fig. 46)</p style="text-align:center">
+                <img src="images/DT_NB/Gini_formula.png" alt="intro_1">
+                <p style="text-align:center">Gini Index formula (Fig. 47)</p style="text-align:center">
+                <h5 style="text-align:left">What is Information Gain ?</h5>
+                <p style="text-align:left">
+                    Information Gain quantifies the amount of information or pattern a particular subset of data would capture if it's split at that particular node, which measures the reduction in entropy achieved by a split. Entropy (refer Figure 45) measures the amount of disorder or uncertainty in the dataset. The main aim of the method is to reduce the uncertainty such that the model is able to learn patterns in the dataset. Higher the information gain the better is the split.  The formula for the same is given in Fig. 46. While this particular project aims at utilizing Gini Index as the split parameter, many applications use Information Gain and entropy to make decisions.
+                </p>
+                <p style="text-align:left">
+                    The process of making predictions for testing is fairly simple: the tree is traversed from the root node by making decisions at each internal node based on the feature values of the data point and the splitting parameter (Gini Index in our case). The prediction is the value obtained at the final node, which is the leaf node.
+
+                </p>
+                <p style="text-align:left">
+                    Decision Tree models in this experiment are used to classify text documents extracted from news articles into two classes, bias and fairness. By doing so, we aim to build a classifier that can easily help classify articles into the respective sentiment behind the use of AI in industries. 
+
+
+                </p>
+            </div>
+            </div>
+            <div class="col-six tab-full left">
+                <h3>Data preparation</h3>
+                <p>
+                    The data preparation stage of Decision Tree was conducted in three steps,
+                    <li>
+                        The titles and articles extracted from the newsAPI for bias and fairness are then converted into a text feature by merging the two columns. The column is then extracted, cleaned and utilized to prepare for the supervised learning models. (Refer fig. 40)
+                    </li>
+                    <li>
+                        The cleaned 'text' column was transformed utilizing the TF-IDF function to enable the text to be in an appropriate input form to the Naive Bayes algorithm. Term Frequency Inverse Document Frequency (TF-IDF) is a function that gives numeric values to every word in a sentence according to its significance in the 'titles' column. It helps in presenting the text meaningfully. (Refer Fig. 41) 
+                    </li>
+                    <li>
+                        The column transformed was then extracted to create a new data frame along with the labels. This data frame was then split into training (with labels) (Refer Fig. 41 and Fig. 42) and test sets (Refer Fig. 43). The data was split into disjoint pieces for the two classes to allow training on one set of data and testing on unseen data. This methodology helps determine whether overfitting might occur at training time, hence contributing to understanding the strengths of the model. Sample test and Training Data available <a href="https://drive.google.com/drive/folders/12QhJkqVIpCbYyTcLEk_SKbWmD_5QKEn0?usp=sharing" target="_blank">here</a>
+                    </li>
+                </p>
+                <img src="images/textmining/fig_43.png" alt="intro_1">
+                <p style="text-align:center">Fig. 43 Test data sample</p style="text-align:center">
+                <h3>Code</h3>
+                <p>The code to Decision Tree’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1WFMQD6AQmBJzXwqBOpJa7XapwABFGw8x?usp=sharing" target="_blank">here</a>. </p>
+                <img src="images/textmining/fig_53.png" alt="intro_1">
+                <p style="text-align:center">Fig.50 Model Evaluation Metric</p style="text-align:center">
+            </div>
+            <div class="col-six tab-full right">
+                <img src="images/textmining/fig_40.png" alt="intro_1">
+                <p style="text-align:center">Fig. 40 Sample of Original Data</p style="text-align:center">
+                <img src="images/textmining/fig_41.png" alt="intro_1">
+                <p style="text-align:center">Fig. 41 Training data sample</p style="text-align:center">
+                <img src="images/textmining/fig_41.png" alt="intro_1">
+                <p style="text-align:center">Fig. 42 Training data sample</p style="text-align:center">
+                
+            </div>
+                
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        
+                    The Decision Tree Model was trained on the training dataset using various parameters such as varying gini values, max depth of tree and min sample split hyperparameters, and the results were obtained from the testing dataset and the best model based on F1 score is visualized in Figure 50. The best model was obtained from {'criterion': 'gini', 'max_depth': 5, 'min_samples_split': 2}. The trees associated with the experiments are attached as figures 51, 52 and 53. The trees seem to be fitting the best for the maximum depth of 5 without overfitting and min_sample_split of 2. 
+
+                    </p>
+
+                </div>
+
+                    <img src="images/textmining/fig_54.png" alt="intro_1">
+                    <p style="text-align:center">Initial Decision tree (Fig. 51)</p style="text-align:center"> 
+                    <img src="images/textmining/fig_55.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree 2 (Fig. 52)</p style="text-align:center">
+                    <img src="images/textmining/fig_56.png" alt="intro_1">
+                    <p style="text-align:center">Decision Tree 3 (Fig. 53)</p style="text-align:center">
+                    <p>
+                            Furthermore, examination of the confusion matrix, Fig. 54 from both embeddings indicates an even distribution of both labels throughout the matrix. This uniform distribution suggests that the model effectively learned both features with equal proficiency.
+                    </p>
+                    <img src="images/textmining/fig_57.png" alt="intro_1" style="width:400px; height:350px;">
+                    <p>Confusion Matrix for the best DT (Fig. 54)</p>   
+                    <p>
+                        <h3>Conclusion</h3>
+                        <p>In conclusion, the experiment revealed that the decision tree classifier struggled to effectively train on the dataset due to its complexity. Nonetheless, the findings suggest the presence of a discernible pattern between news text and their corresponding label (bias/fairness) over time. Though putting the 'max_depth' parameter at 5 avoided overfitting, it did not help much in model accuracy on the test set.
+                        </p>
+                        <p>
+                         <b>This suggests that the decision tree classifier is not the most ideal model to detect the complex patterns of text documents. In the future, it is obvious that employing more advanced models like CNN or LSTMs will yield better results for classification by being able to tap into the complex linguistic patterns in the text. </b>
+                        </p>
+                    </p>
+                </div>
+
+
+        </div> <!-- end about-content timeline -->
+
+    </section>
+
+    <section id="SVM" class="s-works target-section">
+        <div class="row about-content about-content--timeline">
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>ML Modeling</h3>
+                <h1>Support Vector Machines.</h1>
+                
+            </div>
+        </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Overview</h3>
+                <p> 
+                    Support Vector Machine (SVM) (refer Fig. 53) is one of the most advanced supervised machine learning algorithms, known for its capability in creating decision boundaries around complex classes. SVMs excel when the classes are separable, and a clear boundary can be defined between them. The primary goal of SVM is to find the hyperplane that maximizes the margin between these classes.
+                <p>
+                    <h5>SVMs: The linear separators </h5>
+                    SVMs are often referred to as linear separators because of their capability to find a linear decision boundary between classes. SVMs perform best when the classes are linearly separable, as the algorithm aims to find a mathematical equation such as a line or hyperplane that maximizes the distance between the classes, Refer to Fig. 54 for an example. Although SVMs are termed as linear separators, they are capable of delineating boundaries around non-linear data using kernels. Kernels are functions that map the input data to a higher dimension where linear separation becomes possible.
+                </p>
+                <h5 style="text-align:left">How do Kernels work? </h5>
+                <p style="text-align:left">
+                    Kernels, as mentioned earlier, are used in situations where the classes are not linearly separable (Refer to Fig. 55). Kernels help in transforming the input data to a higher dimension in the hope of finding a linear separator in that space. Kernels are fascinating functions because they allow SVMs to compute the decision boundary in the original feature space as if it were a higher-dimensional space. Kernels are specific types of functions that compute the dot product efficiently without explicitly transforming the data into the higher-dimensional space.
+                </p>
+                <p style="text-align:left">
+                    The dot product is extremely helpful in kernels because it leverages the fact that SVMs only need to calculate the dot product between data points in the feature space, avoiding the explicit computation of vectors in a higher-dimensional space. Kernels compute the dot product directly in the higher-dimensional space, thereby reducing the complexity of calculations and allowing for efficient computation without the need for explicit transformation.
+                </p>
+                <img src="images/SVM/Image_3.png" alt="intro_1" style="width: 90%;">
+                <p style="text-align:left">SVM classifier on various kernels (Fig. 57)</p>
+                <img src="images/textmining/sigmoid.png" alt="intro_1" style="width: 90%;">
+                <p style="text-align:left">SVM classifier built on sigmoid kernel (Fig. 57 (b))</p>
+
+            </div>
+
+            <div class="col-six tab-full right">
+                <img src="images/SVM/Image_1.jpeg" alt="intro_1">
+                <p style="text-align:center">SVM Architecture (Fig. 55)</p style="text-align:center">
+                <img src="images/SVM/Image_2.jpeg" alt="intro_1">
+                <p style="text-align:center">An SVM example for linearly separable (Fig. 56)</p style="text-align:center">
+                <h5 style="text-align:left">Linear, Sigmoid and RBF kernel</h5>
+                <p style="text-align:left">
+                     The Linear Kernel is used when the data is Linearly separable, that is, it can be separated using a single Line. The sigmoid kernel is motivated from neural networks and acts like the activation function of a neuron. It is derived from the hyperbolic tangent function and is applicable to neural networks and other non-linear classifiers.  On the other hand, the Radial Basis Function (RBF) Kernel (Refer Fig. 56) measures the similarity between vectors based on the Euclidean distance. An example is presented in Fig. 56 to illustrate the casting of 2D points into 6D points using a polynomial kernel.
+                </p>
+                <p style="text-align:left">
+                    SVM models in this experiment are used to classify text documents extracted from news articles into two classes, bias and fairness. By doing so, we aim to build a classifier that can easily help classify articles into the respective sentiment behind the use of AI in industries. 
+               </p>
+
+            </div>
+            <div>
+                <img src="images/SVM/Image_16.png" alt="intro_1" style="width: 50%;">
+                <p style="text-align:right">Kernels and Example (Fig. 58)</p>
+            </div>
+            </div>
+            <div class="col-six tab-full left">
+                <h3>Data preparation</h3>
+                <p>
+                    The data preparation stage of SVM was conducted in three steps,
+                    <li>
+                        The titles and articles extracted from the newsAPI for bias and fairness are then converted into a text feature by merging the two columns. The column is then extracted, cleaned and utilized to prepare for the supervised learning models. (Refer fig. 40)
+                    </li>
+                    <li>
+                        The cleaned 'text' column was transformed utilizing the TF-IDF function to enable the text to be in an appropriate input form to the Naive Bayes algorithm. Term Frequency Inverse Document Frequency (TF-IDF) is a function that gives numeric values to every word in a sentence according to its significance in the 'titles' column. It helps in presenting the text meaningfully. (Refer Fig. 41) 
+                    </li>
+                    <li>
+                        The column transformed was then extracted to create a new data frame along with the labels. This data frame was then split into training (with labels) (Refer Fig. 41 and Fig. 42) and test sets (Refer Fig. 43). The data was split into disjoint pieces for the two classes to allow training on one set of data and testing on unseen data. This methodology helps determine whether overfitting might occur at training time, hence contributing to understanding the strengths of the model. Sample test and Training Data available <a href="https://drive.google.com/drive/folders/12QhJkqVIpCbYyTcLEk_SKbWmD_5QKEn0?usp=sharing" target="_blank">here</a>
+                    </li>
+                    <li>
+                        Apart from the above transformation, a sentiment feature has also been extracted using tools to build a SVM based sentiment classification. The labels for the sentiments are shown in Fig. 42.
+                    </li>
+                </p>
+                <img src="images/textmining/fig_43.png" alt="intro_1">
+                <p style="text-align:center">Fig. 43 Test data sample</p style="text-align:center">
+                <h3>Code</h3>
+                <p>The code to SVM’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1WFMQD6AQmBJzXwqBOpJa7XapwABFGw8x?usp=sharing" target="_blank">here</a>. </p>
+                <img src="images/textmining/fig_66.png" alt="intro_1">
+                <p style="text-align:center">Fig. 59 Model Evaluation Metric</p style="text-align:center">
+            </div>
+            <div class="col-six tab-full right">
+                <img src="images/textmining/fig_40.png" alt="intro_1">
+                <p style="text-align:center">Fig. 40 Sample of Original Data</p style="text-align:center">
+                <img src="images/textmining/fig_41.png" alt="intro_1">
+                <p style="text-align:center">Fig. 41 Training data sample</p style="text-align:center">
+                <img src="images/textmining/fig_42.png" alt="intro_1">
+                <img src="images/textmining/sentiment.png" alt="intro_1">
+                <p style="text-align:center">Fig. 42 Training data sample</p style="text-align:center">
+            </div>
+            <div class="row about-content">
+
+                <div class="col-six tab-full left">
+                    <h3>Results</h3>
+                    <p> 
+                        The text data collected from the news API was used as input for various SVM models fine-tuned with different kernels and C values. These models were evaluated based on precision, recall and F1-score. The results obtained were compiled into a table, as shown in Table 1. Confusion matrices for the SVM models can be found in Figures 60, 61, 62. Overall, it is observed that the SVM model outperformed other models. 
+
+                    </p>
+                    <p>
+                        SVM trained on the Sigmoid Kernel with C value of 1 gave the best result among all the models trained on the data. The model had a precision of 66%, recall rate of 66% and F1 score of 65.8%. The results suggest that it is the best model among all the models trained in the past experiments. These results are depicted in Figure 59. The rbf kernel with a C value of 10 performed the next best with a precision of 65.6%, recall rate of 65% and F1 score of 64.6%. The linear kernel performed as well as the rbf kernel with slight variations. 
+
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div style="text-align: center;">
+                <img src="images/textmining/fig_65.png" alt="intro_1">
+                <p style="text-align:center">SVM classifier on various kernels (Table. 1)</p>
+            </div>
+
+            <div class="col-six tab-full left">
+                    <div class="timeline">
+
+                        <div class="timeline__block">
+                            <div class="timeline__header">
+                                <h3>Linear Kernel</h3>
+                                <h5>C Value equal to 1 (Fig. 60)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/textmining/fig_67.png" target="_blank">
+                                    <img src="images/textmining/fig_67.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> <!-- end timeline__block -->
+
+                    </div> <!-- end timeline -->
+            </div> <!-- end left -->
+
+            <div class="col-six tab-full right">
+                    <div class="timeline">
+
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <h3>Sigmoid Kernel</h3>
+                                <h5>C value equals to 1 (Fig. 61)</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <a href="images/textmining/fig_68.png" target="_blank">
+                                    <img src="images/textmining/fig_68.png" alt="intro_1" style="width:500px; height:350px;">
+                                </a>
+                            </div>
+                        </div> <!-- end timeline__block -->
+
+
+
+                    </div> <!-- end timeline -->
+            </div> <!-- end right -->
+            <center>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>RBF Kernel</h3>
+                            <h5>C Value equal to 10 (Fig. 62)</h5>
+                        </div>
+                        <div class="timeline__desc">   
+                            <a href="images/textmining/fig_69.png" target="_blank">
+                                <img src="images/textmining/fig_69.png" alt="intro_1" style="width:500px; height:350px;">
+                            </a>
+                        </div>
+                    </div> <!-- end timeline__block -->
+            </center>
+            <div class="row about-content">
+
+                <div class="col-six tab-full left">
+                    <h4>Sentiment Analysis</h4>
+                    <p> 
+                        The sentiment analysis conducted on the best model (kernel=Sigmoid and C=1) gave out the following results. The model tends to be underfitting on the negative sentiment class and fitting quite well on the positive class as seen in figure 63. Overall, the SVM model was able to achieve a precision of 70% in classifying utterances into their respective sentiment. This means that the sentiment behind the articles are more or less evident and easily discerned. The confusion matrix (refer fig. 64) shows the distribution of the positive and negative class and it is clear that there exist much more positive sentiment classes than negative sentiment and hence, it isn’t surprising to observe an overfitting towards the positive class. 
+
+                    </p>
+                    <p>
+                        The above analysis also reveals that there exists more positive sentiment associated with the use of AI, although the data collected consists of both occurrences of bias and fairness equally.  This could suggest that though there exist bias among AI models, it isn’t really upsetting people as much as expected. 
+
+                    </p>
+                </div>
+                <div class="col-six tab-full right">
+                    <img src="images/textmining/fig_71.png" alt="intro_1">
+                    <p style="text-align:center">Fig. 63 Evaluation metric sentiment analysis</p style="text-align:center">
+                    <img src="images/textmining/fig_72.png" alt="intro_1">
+                    <p style="text-align:center">Fig. 64 Confusion Matrix sentiment analysis</p style="text-align:center">
+                </div>
+
+
+
+            </div>
+
+            
+                
+            <h3>Conclusion</h3>
+            <p>Overall, experimenting with SVM models of various kernels and C values using text from news stories has been revealing about their performance when used in bias/fairness classification problems. Among all the experiments attempted, Sigmoid kernel with C = 1 performed best, which exhibited general good performance with equilibriate precision, recall, and F1-score. The consistent demonstration of the linear kernel across different values of C serves to reiterate its validity for this purpose. It is also observed that there is a higher positive tone in the news articles even in the presence of bias in AI, and the trend between such text files are easily recognizable with a high precision, which implies that even though there is bias in AI models, it isn't really upsetting people as much as they expected.
+            </p>
+
+
+        </div> <!-- end about-content timeline -->
+
+    </section>
+
   
     
   
