@@ -38,8 +38,7 @@
 
 <body id="top">
 
-    <!-- header
-    ================================================== -->
+    <!-- header ================================================== -->
     <header class="s-header">
 
         <div class="header-logo">
@@ -723,6 +722,9 @@
                     <li>
                         Apart from the above transformation, a sentiment feature has also been extracted using tools to build a SVM based sentiment classification. The labels for the sentiments are shown in Fig. 42.
                     </li>
+                    <li>
+                        It is extremely important to use neumeric data for SVM classifer as the fundamental principle behind a SVM classifer is to find decision boundaries which can only be plotted if the data presented to the model is in neumeric format and hence, data transformation using tf-tdf is needed. 
+                    </li>
                 </p>
                 <img src="images/textmining/fig_43.png" alt="intro_1">
                 <p style="text-align:center">Fig. 43 Test data sample</p style="text-align:center">
@@ -730,6 +732,8 @@
                 <p>The code to SVM’ Classifier performed on python can be found <a href="https://colab.research.google.com/drive/1WFMQD6AQmBJzXwqBOpJa7XapwABFGw8x?usp=sharing" target="_blank">here</a>. </p>
                 <img src="images/textmining/fig_66.png" alt="intro_1">
                 <p style="text-align:center">Fig. 59 Model Evaluation Metric</p style="text-align:center">
+                <img src="images/textmining/svm_pca.png" alt="intro_1">
+                <p style="text-align:center">Fig. 59 (b) SVM visualized</p style="text-align:center">
             </div>
             <div class="col-six tab-full right">
                 <img src="images/textmining/fig_40.png" alt="intro_1">
