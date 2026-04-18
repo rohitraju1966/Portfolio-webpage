@@ -188,7 +188,7 @@ main { position: relative; z-index: 1; }
   position: absolute;
   top: 0; right: -2vw; bottom: 0;
   width: min(55%, 680px);
-  background-image: url("../images/Rohit_BG_1.jpeg");
+  background-image: url("images/Rohit_BG_1.jpeg");
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
